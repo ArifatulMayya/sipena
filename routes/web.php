@@ -6,9 +6,10 @@ Route::get('/login', function() {
     return view('login');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
+Route::get('/dashboardMhs', function () {
+    return view('dashboardMhs');
 });
+
 Route::get('/registrasi', function () {
     return view('registrasi');
 });
@@ -36,6 +37,24 @@ Route::get('/baKalender', function (){
     return view('baKalender');
 });
 
+Route::get('/', function () {
+    return view('login');
+});
 
+Route::get('/dashboardPA', function () {
+    return view('dashboardPA');
+});
+
+Route::get('/dosenBimbingan', function () {
+    return view('dosenBimbingan');
+});
+
+Route::get('/studi', function () {
+    return view('studi');
+});
+
+Route::get('/dosenPengajuanIRS', function () {
+    return view('dosenPengajuanIRS');
+});
 
 
