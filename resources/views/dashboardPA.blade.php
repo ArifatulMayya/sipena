@@ -11,9 +11,8 @@
 
     <x-navbar></x-navbar>
     <!--profile section-->
-    <div class="max-w-screen-md mx-6 p-6">
-        <div class="bg-[#10296E] px-6 rounded-2xl rounded-b-none py-4 font-bold text-white">
-            <div class="w-11 h-11 bg-gray-300 rounded-full"></div>
+    <div class=" mx-8 pl-5 pr-11 pt-20">
+        <div class="bg-[#10296E] px-8 rounded-2xl rounded-b-none py-4 font-bold text-white">
             <h1>Peter Parker</h1>
         </div>
         <div class="flex justify-between items-center bg-[#2D4995] px-8 rounded-2xl rounded-t-none py-4 font-bold text-white">
@@ -59,7 +58,7 @@
                 </div>
                 
                 <!-- Academic Calendar -->
-                <div class="w-[50%] h-[65vh] ml-4 mt-6 bg-[#10296E]  p-6 rounded-2xl">
+                <div class="w-5/8 space-y-6 ml-4 mt-6 bg-[#10296E]  p-6 rounded-2xl">
                     <!-- Judul Kalender Akademik -->
                     <h3 class="text-lg font-semibold text-white mb-4">Kalender Akademik</h3>
                 
