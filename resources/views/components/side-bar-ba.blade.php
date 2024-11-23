@@ -14,7 +14,7 @@
             <a href="/baBuatRuang">Buat Ruang</a>
         </li>
         <li class=" mx-4 py-2 hover:bg-[#2D4995] rounded-lg">
-            <a href="/baBuatKalender">Buat Kalender Akademik</a>
+            <a href="/baKalender">Buat Kalender Akademik</a>
         </li>
         
     </ul>
