@@ -29,7 +29,7 @@
                     <a href="/baBuatRuang" class="block hover:bg-[#2D4995] rounded-lg px-4 py-2">Buat Ruang</a>
                 </li>
                 <li class="mx-4 py-2">
-                    <a href="/baBuatKalenderAkademik" class="block hover:bg-[#2D4995] rounded-lg px-4 py-2">Buat Kalender Akademik</a>
+                    <a href="/baKalender" class="block hover:bg-[#2D4995] rounded-lg px-4 py-2">Buat Kalender Akademik</a>
                 </li>
             </ul>
         </aside>
