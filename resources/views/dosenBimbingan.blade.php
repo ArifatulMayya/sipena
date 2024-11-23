@@ -8,9 +8,10 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
 </head>
 <body class="bg-[#AEC0F1] h-screen font-sans">
-  
-<div class="flex items-center"> 
-  <x-sidebar></x-sidebar>
+
+  <x-navbar></x-navbar>
+<div class="flex pt-12"> 
+  <x-sidebar-pa></x-sidebar-pa>
   <!--Main Content-->
   <div class="w-full p-6">
     <h1 class="text-2xl font-bold mb-4">Daftar Mahasiswa Perwalian</h1>
