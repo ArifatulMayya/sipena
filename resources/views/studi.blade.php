@@ -9,12 +9,9 @@
 </head>
 <body class="bg-[#AEC0F1] h-screen font-sans">
    <div class="flex items-center"> 
-        <x-sidebar1></x-sidebar1>
+        <x-sidebar1-pa></x-sidebar1-pa>
         <div class="flex-1 p-6">
-            <div class="bg-blue-900 h-12 flex items-center justify-end pr-4">
-                <div class="bg-gray-300 rounded-full w-8 h-8"></div>
-            </div>
-            <div class="bg-blue-200 p-6">
+            <div class="bg-[#AEC0F1] p-6">
                 <h1 class="text-center text-xl font-bold mb-4">Perkembangan Studi</h1>
                 <div class="mb-4">
                     <p>Nama : Stefani Mayya Febria Hutagalung</p>
