@@ -92,7 +92,7 @@
           </td>
         </tr>
         <tr class="border-b">
-          <td class="p-2 text-center">7</td>
+          <td class="p-2 text-center">6</td>
           <td class="p-2 text-center">24060122129879</td>
           <td class="p-2">Syadza Esperita</td>
           <td class="p-2 text-center">4</td>
@@ -101,7 +101,7 @@
           </td>
         </tr>
         <tr class="border-b">
-          <td class="p-2 text-center">8</td>
+          <td class="p-2 text-center">7</td>
           <td class="p-2 text-center">24060122129895</td>
           <td class="p-2">Mario Septianto</td>
           <td class="p-2 text-center">4</td>

@@ -40,6 +40,10 @@ Route::get('/', function () {
     return view('login');
 });
 
+Route::get('/dashboardPA', function () {
+    return view('dashboardPA');
+});
+
 Route::get('/dosenBimbingan', function () {
     return view('dosenBimbingan');
 });
