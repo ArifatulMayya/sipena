@@ -31,16 +31,16 @@
           </button>
           <ul id="dropdown-layouts" class="hidden text-center mx-6 py-2 space-y-2">
             <li class="text-center">
-              <a href="" class="flex justify-center items-center p-2 hover:bg-[#2D4995] transition duration-75 rounded-lg group ">Buat IRS</a>
+              <a href="/buatIRSMhs" class="flex justify-center items-center p-2 hover:bg-[#2D4995] transition duration-75 rounded-lg group ">Buat IRS</a>
             </li>
             <li>
-              <a href="" class="flex justify-center items-center p-2 hover:bg-[#2D4995] transition duration-75 rounded-lg group ">IRS</a>
+              <a href="/irsMhs" class="flex justify-center items-center p-2 hover:bg-[#2D4995] transition duration-75 rounded-lg group ">IRS</a>
             </li>
             <li>
-              <a href="" class="flex justify-center items-center p-2 hover:bg-[#2D4995] transition duration-75 rounded-lg group ">KHS</a>
+              <a href="/khsMhs" class="flex justify-center items-center p-2 hover:bg-[#2D4995] transition duration-75 rounded-lg group ">KHS</a>
             </li>
             <li>
-              <a href="" class="flex justify-center items-center p-2 hover:bg-[#2D4995] transition duration-75 rounded-lg group">Transkrip</a>
+              <a href="/transkripMhs" class="flex justify-center items-center p-2 hover:bg-[#2D4995] transition duration-75 rounded-lg group">Transkrip</a>
             </li>
           </ul>
         </li>

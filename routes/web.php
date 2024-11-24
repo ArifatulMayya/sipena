@@ -6,10 +6,9 @@ Route::get('/login', function() {
     return view('login');
 });
 
-Route::get('/dashboardMhs', function () {
-    return view('dashboardMhs');
+Route::get('/dashboard', function () {
+    return view('dashboard');
 });
-
 Route::get('/registrasi', function () {
     return view('registrasi');
 });
@@ -41,10 +40,6 @@ Route::get('/', function () {
     return view('login');
 });
 
-Route::get('/dashboardPA', function () {
-    return view('dashboardPA');
-});
-
 Route::get('/dosenBimbingan', function () {
     return view('dosenBimbingan');
 });
@@ -56,5 +51,27 @@ Route::get('/studi', function () {
 Route::get('/dosenPengajuanIRS', function () {
     return view('dosenPengajuanIRS');
 });
+
+Route::get('/buatIRSMhs', function () {
+    return view('buatIRSMhs');
+});
+
+Route::get('/irsMhs', function () {
+    return view('irsMhs');
+});
+
+Route::get('/khsMhs', function () {
+    return view('khsMhs');
+});
+
+Route::get('/transkripMhs', function () {
+    return view('transkripMhs');
+});
+
+Route::get('/dashboardMhs', function () {
+    return view('dashboardMhs');
+});
+
+
 
 
