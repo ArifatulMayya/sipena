@@ -17,7 +17,7 @@
         </div>
         <div class="flex justify-between items-center bg-[#2D4995] px-8 rounded-2xl rounded-t-none py-4 font-bold text-white">
             <h1>NIP : 987694302975020</h1>
-            <button class="bg-orange-500 text-white px-4 py-1 rounded-md">Tanda Tangan Digital</button>
+            <button class="bg-orange-500 hover:bg-orange-700 text-white px-4 py-1 rounded-md">Tanda Tangan Digital</button>
         </div>
     </div>
 
