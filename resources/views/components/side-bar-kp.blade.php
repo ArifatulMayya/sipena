@@ -10,7 +10,7 @@
    <aside>
          <ul class="space-y-2">
             <li class="mx-4 py-2">
-                <a href="/dashboard" class="block hover:bg-[#2D4995] hover:font-bold rounded-lg px-4 py-2 ">Dashboard</a>
+                <a href="/kpDashboard" class="block hover:bg-[#2D4995] hover:font-bold rounded-lg px-4 py-2 ">Dashboard</a>
             </li>
             <li class="mx-4 py-2">
                 <a href="/kpMahasiswa" class="block hover:bg-[#2D4995] hover:font-bold rounded-lg px-4 py-2 ">Daftar mahasiswa</a>
