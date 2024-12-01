@@ -1,14 +1,21 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 
-Route::get('/login', function() {
-    return view('login');
+Route::get('/login', [LoginController::class,'store']);
+
+Route::middleware('guest')->group(function () {
+    Route::get('login', [LoginController::class, 'create'])
+        ->name('login');
+    Route::post('login', [LoginController::class, 'store']);
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
+Route::middleware('auth')->group(function () {
+    Route::post('logout', [LoginController::class, 'destroy'])
+        ->name('logout');
 });
+
 Route::get('/registrasi', function () {
     return view('registrasi');
 });
@@ -74,6 +81,30 @@ Route::get('/transkripMhs', function () {
 
 Route::get('/dashboardMhs', function () {
     return view('dashboardMhs');
+});
+
+Route::get('/kpMahasiswa', function () {
+    return view('kpMahasiswa');
+});
+
+Route::get('/kpPerkembangan', function () {
+    return view('kpPerkembangan');
+});
+
+Route::get('/kpMahasiswa', function () {
+    return view('kpMahasiswa');
+});
+
+Route::get('/kpBuatJadwal', function () {
+    return view('kpBuatJadwal');
+});
+
+Route::get('/kpirsVerifikasi', function () {
+    return view('kpirsVerifikasi');
+});
+
+Route::get('/transkripMhs', function () {
+    return view('transkripMhs');
 });
 
 
