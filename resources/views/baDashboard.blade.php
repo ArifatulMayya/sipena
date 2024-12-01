@@ -28,9 +28,6 @@
                 <li class="mx-4 py-2">
                     <a href="/baBuatRuang" class="block hover:bg-[#2D4995] rounded-lg px-4 py-2">Buat Ruang</a>
                 </li>
-                <li class="mx-4 py-2">
-                    <a href="/baKalender" class="block hover:bg-[#2D4995] rounded-lg px-4 py-2">Buat Kalender Akademik</a>
-                </li>
             </ul>
         </aside>
 
@@ -40,14 +37,15 @@
             <div class="bg-[#AEC0F1] text-white p-6 mx-6 rounded-2xl grid grid-cols-2 font-bold text-center">
                 <div class="bg-[#10296E] py-6 rounded-l-xl border-r">
                     <h1 class="text-xl font-normal">Jumlah Pengajuan Ruang</h1>
-                    <h1 class="text-3xl mt-4 pt-4 border-t">30</h1>
+                    <!-- Display dynamic count of ruang submissions -->
+                    <h1 class="text-3xl mt-4 pt-4 border-t">{{ $totalPengajuanRuang }}</h1>
                 </div>
                 <div class="bg-[#10296E] py-6 rounded-r-xl">
                     <h1 class="text-xl font-normal">Pengajuan Ruang Disetujui</h1>
                     <h1 class="text-3xl mt-4 pt-4 border-t">30</h1>
                 </div>
             </div>
-        
-
+        </div>
+    </div>
 </body>
 </html>

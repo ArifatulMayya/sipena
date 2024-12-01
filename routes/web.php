@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RuangController;
 
 Route::get('/login', [LoginController::class,'store']);
 
@@ -15,6 +16,9 @@ Route::middleware('auth')->group(function () {
     Route::post('logout', [LoginController::class, 'destroy'])
         ->name('logout');
 });
+
+Route::post('/ruang', [RuangController::class, 'store'])->name('ruang.store');
+Route::get('/baBuatRuang', [RuangController::class, 'index'])->name('ruang.index');
 
 Route::get('/registrasi', function () {
     return view('registrasi');
@@ -32,13 +36,14 @@ Route::get('/dekanPersetujuanJadwal', function (){
     return view('dekanPersetujuanJadwal');
 });
 
-Route::get('/baDashboard', function (){
-    return view('baDashboard');
-});
+Route::get('/baDashboard', [RuangController::class, 'dashboard'])->name('dashboard');
+// Route::get('/baDashboard', function (){
+//     return view('baDashboard');
+// });
 
-Route::get('/baBuatRuang', function (){
-    return view('baBuatRuang');
-});
+// Route::get('/baBuatRuang', function (){
+//     return view('baBuatRuang');
+// });
 Route::get('/baKalender', function (){
     return view('baKalender');
 });
@@ -105,6 +110,14 @@ Route::get('/kpirsVerifikasi', function () {
 
 Route::get('/transkripMhs', function () {
     return view('transkripMhs');
+});
+
+Route::get('/kpstudi', function(){
+    return view('kpstudi');
+});
+
+Route::get('/kpDashboard', function(){
+    return view('kpDashboard');
 });
 
 
