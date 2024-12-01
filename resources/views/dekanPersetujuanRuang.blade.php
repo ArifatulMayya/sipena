@@ -40,69 +40,27 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td class="py-3">
-                                E101
-                            </td>
-                            <td class="py-3">
-                                E
-                            </td>
-                            <td class="py-3">
-                                1
-                            </td>
-                            <td class="py-3">
-                                50
-                            </td>
-                            <td class="py-3">
-                                Seminar
-                            </td>
-                            <td class="py-3">
-                                <button class="bg-green-400 w-24 py-1 rounded-lg">Setuju</button>
-                                <button class="bg-red-600 w-24 py-1 rounded-lg">Tolak</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="py-3">
-                                E101
-                            </td>
-                            <td class="py-3">
-                                E
-                            </td>
-                            <td class="py-3">
-                                1
-                            </td>
-                            <td class="py-3">
-                                50
-                            </td>
-                            <td class="py-3">
-                                Seminar
-                            </td>
-                            <td class="py-3">
-                                <button class="bg-green-400 w-24 py-1 rounded-lg">Setuju</button>
-                                <button class="bg-red-600 w-24 py-1 rounded-lg">Tolak</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="py-3">
-                                E101
-                            </td>
-                            <td class="py-3">
-                                E
-                            </td>
-                            <td class="py-3">
-                                1
-                            </td>
-                            <td class="py-3">
-                                50
-                            </td>
-                            <td class="py-3">
-                                Seminar
-                            </td>
-                            <td class="py-3">
-                                <button class="bg-green-400 w-24 py-1 rounded-lg">Setuju</button>
-                                <button class="bg-red-600 w-24 py-1 rounded-lg">Tolak</button>
-                            </td>
-                        </tr>
+                        @foreach($ruangForApproval as $ruang)
+                            <tr>
+                                <td class="py-3">{{ $ruang->no_ruang }}</td>
+                                <td class="py-3">{{ $ruang->blok_gedung }}</td>
+                                <td class="py-3">{{ $ruang->lantai }}</td>
+                                <td class="py-3">{{ $ruang->kapasitas }}</td>
+                                <td class="py-3">{{ $ruang->keperluan }}</td>
+                                <td class="py-3">
+                                    <form action="{{ route('ruang.approve', $ruang->id) }}" method="POST">
+                                        @csrf
+                                        @method('PUT')
+                                        <button class="bg-green-400 w-24 py-1 rounded-lg" type="submit">Setuju</button>
+                                    </form>
+                                    <form action="{{ route('ruang.reject', $ruang->id) }}" method="POST" class="mt-2">
+                                        @csrf
+                                        @method('PUT')
+                                        <button class="bg-red-600 w-24 py-1 rounded-lg" type="submit">Tolak</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
