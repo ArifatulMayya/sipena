@@ -38,11 +38,11 @@
                 <div class="bg-[#10296E] py-6 rounded-l-xl border-r">
                     <h1 class="text-xl font-normal">Jumlah Pengajuan Ruang</h1>
                     <!-- Display dynamic count of ruang submissions -->
-                    <h1 class="text-3xl mt-4 pt-4 border-t">{{ $totalPengajuanRuang }}</h1>
+                    <h1 class="text-3xl mt-4 pt-4 border-t">{{ $totalRuang }}</h1>
                 </div>
                 <div class="bg-[#10296E] py-6 rounded-r-xl">
                     <h1 class="text-xl font-normal">Pengajuan Ruang Disetujui</h1>
-                    <h1 class="text-3xl mt-4 pt-4 border-t">30</h1>
+                    <h1 class="text-3xl mt-4 pt-4 border-t">{{ $approvedRuang }}</h1>
                 </div>
             </div>
         </div>

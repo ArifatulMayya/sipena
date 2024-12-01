@@ -18,25 +18,31 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::post('/ruang', [RuangController::class, 'store'])->name('ruang.store');
-Route::get('/baBuatRuang', [RuangController::class, 'index'])->name('ruang.index');
+Route::get('/baBuatRuang', [RuangController::class, 'buatRuang'])->name('ruang.buatRuang');
 
 Route::get('/registrasi', function () {
     return view('registrasi');
 });
 
-Route::get('/dekanDashboard', function () {
-    return view('dekanDashboard');
-});
+Route::get('/dekanDashboard', [RuangController::class, 'index2']);
 
-Route::get('/dekanPersetujuanRuang', function (){
-    return view('dekanPersetujuanRuang');
-});
+// Route::get('/dekanDashboard', function () {
+//     return view('dekanDashboard');
+// });
+
+// Route::get('/dekanPersetujuanRuang', function (){
+//     return view('dekanPersetujuanRuang');
+// });
+
+Route::get('/dekanPersetujuanRuang', [RuangController::class, 'showRuangForApproval'])->name('ruang.approval');
+Route::put('/ruang/{id}/approve', [RuangController::class, 'approveRuang'])->name('ruang.approve');
+Route::put('/ruang/{id}/reject', [RuangController::class, 'rejectRuang'])->name('ruang.reject');
 
 Route::get('/dekanPersetujuanJadwal', function (){
     return view('dekanPersetujuanJadwal');
 });
 
-Route::get('/baDashboard', [RuangController::class, 'dashboard'])->name('dashboard');
+Route::get('/baDashboard', [RuangController::class, 'index2'])->name('index2');
 // Route::get('/baDashboard', function (){
 //     return view('baDashboard');
 // });
