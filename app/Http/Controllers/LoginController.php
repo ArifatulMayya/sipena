@@ -52,8 +52,7 @@ class LoginController extends Controller
         } elseif ($user->role == 'dekan') {
             return redirect()->route('dekanDashboard'); // Redirect to dekan dashboard
         } elseif ($user->role == 'pembimbing akademik') {
-            dd($credentials);
-            return view('dashboardPA'); 
+            return redirect()->route('dashboardPA');
         }
     }
 

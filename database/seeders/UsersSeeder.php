@@ -16,8 +16,8 @@ class UsersSeeder extends Seeder
         $users = [
             // Mahasiswa
             [
-                'nama' => 'John Doe',
-                'email' => 'john.doe@example.com',
+                'nama' => 'Stefani Mayya Febria Hutagalung',
+                'email' => 'stef.mfh@students.undip.ac.id',
                 'password' => Hash::make('password123'),
                 'role' => 'mahasiswa',
             ],
@@ -73,18 +73,10 @@ class UsersSeeder extends Seeder
             // Pembimbing Akademik 1
             [
                 'nama' => 'Prof. Charles Blue',
-                'email' => 'charles.blue@example.com',
+                'email' => 'charles.blue@live.undip.ac.id',
                 'password' => Hash::make('password123'),
                 'role' => 'pembimbing akademik',
-            ],
-
-            // Pembimbing Akademik 2
-            [
-                'nama' => 'Dr. Laura Green',
-                'email' => 'laura.green@example.com',
-                'password' => Hash::make('password123'),
-                'role' => 'pembimbing akademik',
-            ],
+            ]
         ];
 
         // Insert users data
