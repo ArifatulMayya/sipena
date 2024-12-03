@@ -14,6 +14,15 @@ class DosenSeeder extends Seeder
     {
         $dosen = [
             [
+                'nama' => 'Prof. Charles Blue',
+                'nip' => '16982412710003',
+                'email' => 'charles.blue@live.undip.ac.id',
+                'no_telp' => '081237682319',
+                'tanggal_lahir' => '1979-04-25',
+                'alamat' => 'Jl. Merdeka No. 10, Jakarta',
+                'gender' => 'Laki-laki',
+            ],
+            [
                 'nama' => 'Dr. Alice Johnson',
                 'nip' => '123456789',
                 'email' => 'alice.johnson@university.com',
