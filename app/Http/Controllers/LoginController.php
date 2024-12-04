@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -19,42 +20,41 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        // Validate login data
-        $credentials = $request->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required', 'min:8'],
+        // Validate input
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
         ]);
-
-        // Attempt to authenticate the user
-        if (auth()->attempt($request->only('email', 'password'))) {
-            // Regenerate session to prevent session fixation attacks
-            $request->session()->regenerate();
-
-            // Redirect based on the user's role
-            return $this->redirectBasedOnRole();
+    
+        $credentials = $request->only('email', 'password');
+        // Attempt to authenticate
+        if (Auth::attempt($credentials)) {
+            // dd($credentials);
+            $user = Auth::user();
+            
+            // Redirect based on user role
+            if ($user->role === 'mahasiswa') {
+                return redirect()->route('dashboardmhs');
+            } elseif ($user->role === 'bagian akademik') {
+                return redirect()->route('dashboardba');
+            } elseif ($user->role === 'pembimbing akademik') {
+                return redirect()->route('dashboardpa');
+            } else if ($user->role === 'dekan') {
+                return redirect()->route('dashboarddekan');
+            } else if ($user->role === 'kaprodi') {
+                return redirect()->route('dashboardkaprodi');
+            }
+            else {
+                return redirect()->route('login')->withErrors(['role' => 'Role tidak valid.']);
+            }
         }
-
-        // If authentication fails, redirect back with an error
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ]);
+    
+        // If login fails
+        return redirect()->route('login')->withErrors(['email' => 'Email atau password salah.']);
     }
+    
 
-    /**
-     * Redirect based on the user's role.
-     */
-    protected function redirectBasedOnRole()
-    {
-        $user = auth()->user();
 
-        if ($user->role == 'mahasiswa') {
-            return redirect()->route('dashboardMhs'); // Redirect to mahasiswa dashboard
-        } elseif ($user->role == 'dekan') {
-            return redirect()->route('dekanDashboard'); // Redirect to dekan dashboard
-        } elseif ($user->role == 'pembimbing akademik') {
-            return redirect()->route('dashboardPA');
-        }
-    }
 
     /**
      * Log the user out of the application.

@@ -11,6 +11,7 @@
                 <div class="hidden mr-3 -mb-1 sm:block">
                 </div>
                 <!-- Profile -->
+                <a href="/logout"><button>Logout</button></a>
                 <div class="flex items-center ml-3">
                   <div>
                     <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button-2" aria-expanded="false" data-dropdown-toggle="dropdown-2">
