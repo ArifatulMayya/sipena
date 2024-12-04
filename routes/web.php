@@ -2,20 +2,25 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RuangController;
 
 Route::get('/login', [LoginController::class,'store']);
 
 Route::middleware('guest')->group(function () {
-    Route::get('login', [LoginController::class, 'create'])
-        ->name('login');
-    Route::post('login', [LoginController::class, 'store']);
+    Route::get('login', [LoginController::class, 'create'])->name('login');  // Login form
+    Route::post('login', [LoginController::class, 'store']);  // Form submission (POST)
 });
 
 Route::middleware('auth')->group(function () {
-    Route::post('logout', [LoginController::class, 'destroy'])
-        ->name('logout');
+    Route::get('logout', [LoginController::class, 'destroy'])->name('logout');
+    Route::get('dashboardpa', [DashboardController::class, 'indexpa'])->name('dashboardpa');
+    Route::get('dashboardmhs', [DashboardController::class, 'indexmhs'])->name('dashboardmhs');
+    Route::get('dashboardba', [DashboardController::class, 'indexmhs'])->name('dashboardba');
+    Route::get('dashboarddekan', [DashboardController::class, 'indexdekan'])->name('dashboarddekan');
+    Route::get('dashboardkaprodi', [DashboardController::class, 'indexkaprodi'])->name('dashboardkaprodi');
 });
+
 
 Route::post('/ruang', [RuangController::class, 'store'])->name('ruang.store');
 Route::get('/baBuatRuang', [RuangController::class, 'buatRuang'])->name('ruang.buatRuang');

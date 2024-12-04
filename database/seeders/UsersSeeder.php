@@ -18,31 +18,31 @@ class UsersSeeder extends Seeder
             [
                 'nama' => 'Stefani Mayya Febria Hutagalung',
                 'email' => 'stef.mfh@students.undip.ac.id',
-                'password' => Hash::make('password123'),
+                'password' => Hash::make('12345678'),
                 'role' => 'mahasiswa',
             ],
             [
-                'nama' => 'Jane Smith',
-                'email' => 'jane.smith@example.com',
-                'password' => Hash::make('password123'),
+                'nama' => 'Peter Parker',
+                'email' => 'peterparker@students.undip.ac.id',
+                'password' => Hash::make('12345678'),
                 'role' => 'mahasiswa',
             ],
             [
-                'nama' => 'Samuel Green',
-                'email' => 'samuel.green@example.com',
-                'password' => Hash::make('password123'),
+                'nama' => 'Hulk',
+                'email' => 'hulkijo@students.undip.ac.id',
+                'password' => Hash::make('12345678'),
                 'role' => 'mahasiswa',
             ],
             [
-                'nama' => 'Emily Johnson',
-                'email' => 'emily.johnson@example.com',
-                'password' => Hash::make('password123'),
+                'nama' => 'Doctor Strange',
+                'email' => 'kangsihir@students.undip.ac.id',
+                'password' => Hash::make('12345678'),
                 'role' => 'mahasiswa',
             ],
             [
-                'nama' => 'Michael Brown',
-                'email' => 'michael.brown@example.com',
-                'password' => Hash::make('password123'),
+                'nama' => 'Thanos',
+                'email' => 'ubiungu@students.undip.ac.id',
+                'password' => Hash::make('12345678'),
                 'role' => 'mahasiswa',
             ],
 
@@ -50,7 +50,7 @@ class UsersSeeder extends Seeder
             [
                 'nama' => 'Prof. Adam White',
                 'email' => 'adam.white@example.com',
-                'password' => Hash::make('password123'),
+                'password' => Hash::make('12345678'),
                 'role' => 'dekan',
             ],
 
@@ -58,7 +58,7 @@ class UsersSeeder extends Seeder
             [
                 'nama' => 'Dr. Susan Black',
                 'email' => 'susan.black@example.com',
-                'password' => Hash::make('password123'),
+                'password' => Hash::make('12345678'),
                 'role' => 'kaprodi',
             ],
 
@@ -66,15 +66,15 @@ class UsersSeeder extends Seeder
             [
                 'nama' => 'Alice Grey',
                 'email' => 'alice.grey@example.com',
-                'password' => Hash::make('password123'),
+                'password' => Hash::make('12345678'),
                 'role' => 'bagian akademik',
             ],
 
             // Pembimbing Akademik 1
             [
-                'nama' => 'Prof. Charles Blue',
-                'email' => 'charles.blue@live.undip.ac.id',
-                'password' => Hash::make('password123'),
+                'nama' => 'Prof. Bobby Kertanegara',
+                'email' => 'burjobp@live.undip.ac.id',
+                'password' => Hash::make('12345678'),
                 'role' => 'pembimbing akademik',
             ]
         ];
