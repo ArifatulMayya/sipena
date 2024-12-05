@@ -72,7 +72,7 @@ class UsersSeeder extends Seeder
 
             // Pembimbing Akademik 1
             [
-                'nama' => 'Prof. Bobby Kertanegara',
+                'nama' => 'Prof. Peter Parker',
                 'email' => 'burjobp@live.undip.ac.id',
                 'password' => Hash::make('12345678'),
                 'role' => 'pembimbing akademik',

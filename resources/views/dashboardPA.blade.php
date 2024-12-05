@@ -13,10 +13,10 @@
     <!--profile section-->
     <div class=" mx-8 pl-5 pr-11 pt-20">
         <div class="bg-[#10296E] px-8 rounded-2xl rounded-b-none py-4 font-bold text-white">
-            <h1>Peter Parker</h1>
+            <h1>Prof. Peter Parker</h1>
         </div>
         <div class="flex justify-between items-center bg-[#2D4995] px-8 rounded-2xl rounded-t-none py-4 font-bold text-white">
-            <h1>NIP : 987694302975020</h1>
+            <h1>NIP : 16982412710003</h1>
             <button class="bg-orange-500 hover:bg-orange-700 text-white px-4 py-1 rounded-md">Tanda Tangan Digital</button>
         </div>
     </div>
