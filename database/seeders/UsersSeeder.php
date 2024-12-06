@@ -62,6 +62,13 @@ class UsersSeeder extends Seeder
                 'role' => 'kaprodi',
             ],
 
+            [
+                'nama' => 'Ayam Undip',
+                'email' => 'ayam@example.com',
+                'password' => Hash::make('12345678'),
+                'role' => 'kaprodi',
+            ],
+
             // Bagian Akademik
             [
                 'nama' => 'Alice Grey',

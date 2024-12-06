@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RuangController;
 use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\JadwalKuliahController;
 
 Route::get('/login', [LoginController::class,'store']);
 
@@ -25,6 +26,12 @@ Route::middleware('auth')->group(function () {
 
 Route::post('/ruang', [RuangController::class, 'store'])->name('ruang.store');
 Route::get('/baBuatRuang', [RuangController::class, 'buatRuang'])->name('ruang.buatRuang');
+
+Route::resource('jadwalkuliah', JadwalKuliahController::class);
+
+Route::post('/jadwalkuliah', [JadwalKuliahController::class, 'store'])->name('jadwalkuliah.store');
+Route::get('/kpBuatRuang', [JadwalKuliahController::class, 'buatJadwalKuliah'])->name('jadwal.buatJadwal');
+
 
 Route::get('/registrasi', function () {
     return view('registrasi');
@@ -135,5 +142,6 @@ Route::get('/kpDashboard', function(){
 });
 
 
+Route::resource('jadwalkuliah', JadwalKuliahController::class);
 
 
