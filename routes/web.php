@@ -48,17 +48,11 @@ Route::get('/dekanPersetujuanJadwal', function (){
     return view('dekanPersetujuanJadwal');
 });
 
-Route::get('/baDashboard', [RuangController::class, 'index2'])->name('index2');
-// Route::get('/baDashboard', function (){
-//     return view('baDashboard');
-// });
+Route::get('/baDashboard', [RuangController::class, 'index'])->name('index');
 
 // Route::get('/baBuatRuang', function (){
 //     return view('baBuatRuang');
 // });
-Route::get('/baKalender', function (){
-    return view('baKalender');
-});
 
 Route::get('/', function () {
     return view('login');

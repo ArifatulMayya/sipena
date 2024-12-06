@@ -12,7 +12,7 @@ class RuangController extends Controller
     public function index()
     {
         // Fetch all ruang records from the database
-        $totalRuang = Ruang::all();
+        $totalRuang = Ruang::count();
 
         $approvedRuang = Ruang::where('status', 'Approved')->count();        
 
@@ -31,10 +31,10 @@ class RuangController extends Controller
     public function showRuangForApproval()
     {
         // Get all ruang that are pending approval (status = "Pending")
-        $ruangForApproval = Ruang::where('status', 'Pending')->get();
+        $data = Ruang::all();
 
         // Pass the data to the view
-        return view('dekanPersetujuanRuang', compact('ruangForApproval'));
+        return view('dekanPersetujuanRuang', compact('data'));
     }
 
     public function index2()
@@ -49,20 +49,6 @@ class RuangController extends Controller
         return view('dekanDashboard', compact('totalRuang', 'approvedRuang'));
     }
 
-    // public function showTotalRuang()
-    // {
-    //     // Ambil semua ruang yang statusnya "Pending"
-    //     $ruangForApproval = Ruang::where('status', 'Pending')->get();
-
-    //     // Hitung jumlah ruang yang sudah disetujui
-    //     $approvedCount = Ruang::where('status', 'Approved')->count();
-
-    //     // Hitung total ruang yang diajukan
-    //     $totalCount = Ruang::count();
-
-    //     // Pass data ke view
-    //     return view('dekanDashboard', compact('ruangForApproval', 'approvedCount', 'totalCount'));
-    // }
 
     /**
      * Approve the room.

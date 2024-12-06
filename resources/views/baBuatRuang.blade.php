@@ -29,6 +29,7 @@
                             <th class="w-[15%] py-3">Lantai</th>
                             <th class="w-[10%] py-3">Kapasitas</th>
                             <th class="w-[20%] py-3">Keperluan</th>
+                            
                         </tr>
                     </thead>
                     <tbody>
