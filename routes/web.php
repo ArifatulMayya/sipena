@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RuangController;
+use App\Http\Controllers\MahasiswaController;
 
 Route::get('/login', [LoginController::class,'store']);
 
@@ -66,10 +67,12 @@ Route::get('/', function () {
 Route::get('/dashboardPA', function () {
     return view('dashboardPA');
 });
-
-Route::get('/dosenBimbingan', function () {
-    return view('dosenBimbingan');
-});
+Route::get('/dosenBimbingan', [MahasiswaController::class, 'index'])->name('mahasiswa.index');
+Route::get('/dosenBimbingan/urutkan', [MahasiswaController::class, 'urutkan'])->name('mahasiswa.urutkan');
+Route::get('dosenBimbingan/cari',[MahasiswaController::class,'cari'])->name('mahasiswa.cari');
+// Route::get('/dosenBimbingan', function () {
+//     return view('dosenBimbingan');
+// });
 
 Route::get('/studi', function () {
     return view('studi');
