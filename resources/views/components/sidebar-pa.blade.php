@@ -3,8 +3,8 @@
    <div class="flex flex-col items-center mb-8 pt-6">
       <img alt="Profile Picture" class="w-24 h-24 rounded-full bg-gray-300" height="100" width="100"/>
       <div class="ml-4 text-center">
-         <p class="font-bold">Peter Parker <p>
-         <p> NIP:1982300453</p>
+         <p class="font-bold">Prof. Peter Parker <p>
+         <p> NIP:16982412710003</p>
       </div>
    </div>
    <aside>

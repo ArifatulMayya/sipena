@@ -31,7 +31,7 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             // dd($credentials);
             $user = Auth::user();
-            
+             
             // Redirect based on user role
             if ($user->role === 'mahasiswa') {
                 return redirect()->route('dashboardmhs');
