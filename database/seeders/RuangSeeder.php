@@ -44,7 +44,7 @@ class RuangSeeder extends Seeder
                 'lantai' => $room['lantai'],
                 'kapasitas' => $room['kapasitas'],
                 'keperluan' => $room['keperluan'],
-                'status'=>'Disetujui',
+                'status'=>'Approved',
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);
