@@ -54,11 +54,14 @@
                 <div class="grid grid-cols-2 gap-4">
                     <div class="mb-4">
                         <label for="kode_mk" class="block text-sm font-medium text-gray-700">Kode Mata Kuliah</label>
-                        <input type="text" id="kode_mk" name="kode_mk" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md" required>
+                        <select id="kode_mk" name="kode_mk" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md" required>
+                            <option value="" disabled selected>Pilih Kode Mata Kuliah</option>
+                            <!-- Options akan diisi melalui JavaScript -->
+                        </select>
                     </div>
                     <div class="mb-4">
                         <label for="nama_mk" class="block text-sm font-medium text-gray-700">Nama Mata Kuliah</label>
-                        <input type="text" id="nama_mk" name="nama_mk" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md" required>
+                        <input type="text" id="nama_mk" name="nama_mk" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md" readonly>
                     </div>
                     <div class="mb-4">
                         <label for="kelas" class="block text-sm font-medium text-gray-700">Kelas</label>
@@ -73,7 +76,9 @@
                     </div>
                     <div class="mb-4">
                         <label for="nama_ruang" class="block text-sm font-medium text-gray-700">Nama Ruangan</label>
-                        <input type="text" id="nama_ruang" name="nama_ruang" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md" required>
+                        <select id="nama_ruang" name="nama_ruang" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md" required>
+                            <option value="" disabled selected>Pilih Ruangan</option>
+                        </select>
                     </div>
                     <div class="mb-4">
                         <label for="sks" class="block text-sm font-medium text-gray-700">SKS</label>
@@ -156,6 +161,53 @@
   </div>
 </div>
 
+<script>
+    // Data mata kuliah sesuai dengan seeder
+    const mataKuliahData = [
+        { kode_mk: 'PAIK6102', nama_mk: 'Dasar Pemrograman' },
+        { kode_mk: 'PAIK6105', nama_mk: 'Struktur Diskrit' },
+        { kode_mk: 'PAIK6104', nama_mk: 'Logika Informatika' },
+        { kode_mk: 'PAIK6101', nama_mk: 'Matematika I' },
+        { kode_mk: 'PAIK6103', nama_mk: 'Dasar Sistem' },
+        { kode_mk: 'UUW00007', nama_mk: 'Bahasa Inggris' },
+        { kode_mk: 'UUW00005', nama_mk: 'Olahraga' },
+        { kode_mk: 'UUW00003', nama_mk: 'Pancasila dan Kewarganegaraan' },
+        { kode_mk: 'UUW00004', nama_mk: 'Bahasa Indonesia' },
+        { kode_mk: 'UUW00011', nama_mk: 'Pendidikan Agama' },
+        { kode_mk: 'PAIK6202', nama_mk: 'Algoritma dan Pemrograman' },
+        { kode_mk: 'PAIK6204', nama_mk: 'Aljabar Linear' },
+        { kode_mk: 'PAIK6203', nama_mk: 'Organisasi dan Arsitektur Komputer' },
+        { kode_mk: 'PAIK6201', nama_mk: 'Matematika II' },
+        { kode_mk: 'UUW00006', nama_mk: 'Internet of Things (IoT)' },
+        { kode_mk: 'PAIK6301', nama_mk: 'Struktur Data' },
+        { kode_mk: 'PAIK6304', nama_mk: 'Metode Numerik' },
+        { kode_mk: 'PAIK6302', nama_mk: 'Sistem Operasi' },
+        { kode_mk: 'PAIK6305', nama_mk: 'Interaksi Manusia dan Komputer' },
+        { kode_mk: 'PAIK6303', nama_mk: 'Basis Data' },
+        { kode_mk: 'PAIK6306', nama_mk: 'Statistika' },
+        // Tambahkan mata kuliah lain sesuai dengan seeder Anda
+    ];
+
+    // Mengisi dropdown kode mata kuliah
+    const kodeMkSelect = document.getElementById('kode_mk');
+    mataKuliahData.forEach(mk => {
+        const option = document.createElement('option');
+        option.value = mk.kode_mk;
+        option.textContent = mk.kode_mk;
+        kodeMkSelect.appendChild(option);
+    });
+
+    // Mengisi nama mata kuliah secara otomatis saat kode dipilih
+    kodeMkSelect.addEventListener('change', function () {
+        const selectedKode = this.value;
+        const selectedMk = mataKuliahData.find(mk => mk.kode_mk === selectedKode);
+        if (selectedMk) {
+            document.getElementById('nama_mk').value = selectedMk.nama_mk;
+        } else {
+            document.getElementById('nama_mk').value = ''; // Kosongkan jika tidak ditemukan
+        }
+    });
+</script>
         
         
         

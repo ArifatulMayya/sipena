@@ -50,6 +50,7 @@ Route::get('/dekanDashboard', [RuangController::class, 'index2']);
 Route::get('/dekanPersetujuanRuang', [RuangController::class, 'showRuangForApproval'])->name('ruang.approval');
 Route::put('/ruang/{id}/approve', [RuangController::class, 'approveRuang'])->name('ruang.approve');
 Route::put('/ruang/{id}/reject', [RuangController::class, 'rejectRuang'])->name('ruang.reject');
+Route::get('/kpBuatJadwal', [RuangController::class, 'formWithApprovedRuangan'])->name('form.ruangan');
 
 Route::get('/dekanPersetujuanJadwal', function (){
     return view('dekanPersetujuanJadwal');
