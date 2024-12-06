@@ -55,17 +55,11 @@ Route::get('/dekanPersetujuanJadwal', function (){
     return view('dekanPersetujuanJadwal');
 });
 
-Route::get('/baDashboard', [RuangController::class, 'index2'])->name('index2');
-// Route::get('/baDashboard', function (){
-//     return view('baDashboard');
-// });
+Route::get('/baDashboard', [RuangController::class, 'index'])->name('index');
 
 // Route::get('/baBuatRuang', function (){
 //     return view('baBuatRuang');
 // });
-Route::get('/baKalender', function (){
-    return view('baKalender');
-});
 
 Route::get('/', function () {
     return view('login');
@@ -77,17 +71,18 @@ Route::get('/dashboardPA', function () {
 Route::get('/dosenBimbingan', [MahasiswaController::class, 'index'])->name('mahasiswa.index');
 Route::get('/dosenBimbingan/urutkan', [MahasiswaController::class, 'urutkan'])->name('mahasiswa.urutkan');
 Route::get('dosenBimbingan/cari',[MahasiswaController::class,'cari'])->name('mahasiswa.cari');
-// Route::get('/dosenBimbingan', function () {
-//     return view('dosenBimbingan');
-// });
+
 
 Route::get('/studi', function () {
     return view('studi');
 });
 
-Route::get('/dosenPengajuanIRS', function () {
-    return view('dosenPengajuanIRS');
-});
+// Route::get('/dosenPengajuanIRS', function () {
+//     return view('dosenPengajuanIRS');
+// });
+Route::get('/dosenPengajuanIRS', [MahasiswaController::class, 'index1'])->name('mahasiswa.index1');
+Route::get('/dosenPengajuanIRS/urutkan', [MahasiswaController::class, 'urutkan1'])->name('mahasiswa.urutkan1');
+Route::get('dosenPengajuanIRS/cari',[MahasiswaController::class,'cari1'])->name('mahasiswa.cari1');
 
 Route::get('/buatIRSMhs', function () {
     return view('buatIRSMhs');

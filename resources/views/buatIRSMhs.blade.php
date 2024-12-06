@@ -15,7 +15,7 @@
         <!-- Sidebar -->
         <x-side-bar-mahasiswa></x-side-bar-mahasiswa>
         <!-- Main Content Area -->
-        <div class="h-screen ml-[17%] bg-[#AEC0F1] pt-20 w-screen text-center">
+        <div class="h-screen ml-[17%] bg-[#AEC0F1] w-screen text-center">
             <!-- Page Content -->
             <div class="p-6 pt-32">
                 <h1 class="text-3xl font-bold mb-6">Buat Isian Rencana Studi (IRS)</h1>

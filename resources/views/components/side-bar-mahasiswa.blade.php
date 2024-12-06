@@ -8,10 +8,10 @@
     </ul>
     <ul class="space-y-2 my-4">
         <li class=" mx-4 py-2 hover:bg-[#2D4995] rounded-lg">
-            <a href="dashboardMhs">Dashboard</a>
+            <a href="/dashboardMhs">Dashboard</a>
         </li>
         <li class=" mx-4 py-2 hover:bg-[#2D4995] rounded-lg">
-            <a href="dashboardMhs">Registrasi</a>
+            <a href="/registrasi">Registrasi</a>
         </li>
         <li>
   <button

@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('khs', function (Blueprint $table) {
             $table->id();
             $table->string('nim')->unique;
+            $table->string('tahun_ajaran');
+            $table->string('kelas');
             $table->float('ips_mhs');
             $table->float('ipk_mhs');
             $table->timestamps();
