@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RuangController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\JadwalKuliahController;
+use App\Http\Controllers\MatkulController;
 
 Route::get('/login', [LoginController::class,'store']);
 
@@ -136,7 +137,16 @@ Route::get('/kpDashboard', function(){
     return view('kpDashboard');
 });
 
+// Route::get('/kpKelolaMatkul', function(){
+//     return view('kpKelolaMatkul');
+// });
 
 Route::resource('jadwalkuliah', JadwalKuliahController::class);
 
+Route::get('/kpKelolaMatkul', [MatkulController::class, 'index'])->name('kpKelolaMatkul');
+Route::post('/kpKelolaMatkul/store', [MatkulController::class, 'store'])->name('matkul.store');
+// Atau jika ingin menambahkan rute secara manual:
+Route::get('matkul/{id}/edit', [MatkulController::class, 'edit'])->name('matkul.edit');
+Route::put('matkul/{id}', [MatkulController::class, 'update'])->name('matkul.update');
+Route::delete('matkul/{id}', [MatkulController::class, 'destroy'])->name('matkul.destroy');
 

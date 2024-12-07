@@ -16,6 +16,9 @@
                 <a href="/kpMahasiswa" class="block hover:bg-[#2D4995] hover:font-bold rounded-lg px-4 py-2 ">Daftar mahasiswa</a>
             </li>
             <li class="mx-4 py-2">
+                <a href="/kpKelolaMatkul" class="block hover:bg-[#2D4995] hover:font-bold rounded-lg px-4 py-2 ">Kelola Mata Kuliah</a>
+            </li>
+            <li class="mx-4 py-2">
                 <a href="/kpBuatJadwal" class="block hover:bg-[#2D4995] hover:font-bold rounded-lg px-4 py-2 ">Jadwal Kuliah</a>
             </li>
             <li class="mx-4 py-2">
