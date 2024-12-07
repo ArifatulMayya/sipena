@@ -15,12 +15,15 @@ return new class extends Migration
             $table->id();
             $table->string('kode_mk');
             $table->string('nama_mk');
+            $table->string('kelas');
             $table->string('hari');
             $table->string('nama_ruang');
             $table->integer('sks');
             $table->string('sifat');
             $table->time('wkt_mulai');
             $table->time('wkt_selesai');
+            $table->integer('kuota');
+            $table->string('status');
             $table->timestamps();
         });
     }
