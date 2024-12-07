@@ -78,13 +78,18 @@
                             <option value="1">A</option>
                             <option value="2">B</option>
                             <option value="3">C</option>
-                            <option value="2">D</option>
-                            <option value="3">E</option>
+                            <option value="4">D</option>
+                            <option value="5">E</option>
                         </select>
                     </div>
                     <div class="mb-4">
                         <label for="nama_ruang" class="block text-sm font-medium text-gray-700">Nama Ruangan</label>
-                        <input type="text" id="nama_ruang" name="nama_ruang" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md" required>
+                        <select id="nama_ruang" name="nama_ruang" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md" required>
+                            <option value="" disabled selected>Pilih Ruangan</option>
+                            @foreach ($approvedRuangs as $ruang)
+                                <option value="{{ $ruang->no_ruang }}">{{ $ruang->no_ruang }}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="mb-4">
                         <label for="sks" class="block text-sm font-medium text-gray-700">SKS</label>
@@ -111,11 +116,11 @@
                     </div>
                     <div class="mb-4">
                         <label for="wkt_mulai" class="block text-sm font-medium text-gray-700">Waktu Mulai</label>
-                        <input type="time" id="jam" name="jam" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md" required>
+                        <input type="time" id="wkt_mulai" name="wkt_mulai" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md" required>
                     </div>
                     <div class="mb-4">
                         <label for="wkt_selesai" class="block text-sm font-medium text-gray-700">Waktu Selesai</label>
-                        <input type="time" id="jam" name="jam" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md" required>
+                        <input type="time" id="wkt_selesai" name="wkt_selesai" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md" required>
                     </div>
                     <div class="mb-4">
                         <label for="kuota" class="block text-sm font-medium text-gray-700">Kuota</label>

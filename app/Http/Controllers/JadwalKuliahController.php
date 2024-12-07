@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Jadwalkuliah;
+use App\Models\Ruang;
 use Illuminate\Http\Request;
 
 class JadwalKuliahController extends Controller
@@ -22,9 +23,10 @@ class JadwalKuliahController extends Controller
     {
         // Fetch all Jadwalkuliah records from the database
         $jadwalkuliahs = Jadwalkuliah::all();
+        $approvedRuangs = Ruang::where('status', 'Approved')->get();
 
         // Return the view with the Jadwalkuliah data
-        return view('kpBuatJadwal', compact('jadwalkuliahs'));
+        return view('kpBuatJadwal', compact('jadwalkuliahs', 'approvedRuangs'));
     }
 
     public function showJadwalkuliahForApproval()
@@ -35,7 +37,8 @@ class JadwalKuliahController extends Controller
         // Pass the data to the view
         return view('dekanPersetujuanJadwal', compact('data'));
     }
-
+    
+    
     public function index2()
     {
         // Get the total number of room submissions
@@ -48,50 +51,23 @@ class JadwalKuliahController extends Controller
         return view('dekanDashboard', compact('totalJadwalkuliah', 'approvedJadwalkuliah'));
     }
 
-    // public function showTotalJadwalkuliah()
-    // {
-    //     // Ambil semua Jadwalkuliah yang statusnya "Pending"
-    //     $JadwalkuliahForApproval = Jadwalkuliah::where('status', 'Pending')->get();
-
-    //     // Hitung jumlah Jadwalkuliah yang sudah disetujui
-    //     $approvedCount = Jadwalkuliah::where('status', 'Approved')->count();
-
-    //     // Hitung total Jadwalkuliah yang diajukan
-    //     $totalCount = Jadwalkuliah::count();
-
-    //     // Pass data ke view
-    //     return view('dekanDashboard', compact('JadwalkuliahForApproval', 'approvedCount', 'totalCount'));
-    // }
-
-    /**
-     * Approve the room.
-     */
-    public function approveJadwalkuliah($id)
+    public function showTotalJadwalkuliah()
     {
-        $jadwalkuliah = Jadwalkuliah::findOrFail($id);
-        $jadwalkuliah->status = 'Approved'; // Setujui Jadwalkuliah
-        $jadwalkuliah->save();
+        // Ambil semua Jadwalkuliah yang statusnya "Pending"
+        $JadwalkuliahForApproval = Jadwalkuliah::where('status', 'Pending')->get();
 
-        // Perbarui jumlah pengajuan yang disetujui
+        // Hitung jumlah Jadwalkuliah yang sudah disetujui
         $approvedCount = Jadwalkuliah::where('status', 'Approved')->count();
 
-        // Kembali ke halaman persetujuan dengan notifikasi
-        return redirect()->route('jadwalkuliah.approval')->with('success', 'jadwalkuliah disetujui! Jumlah pengajuan yang disetujui: ' . $approvedCount);
+        // Hitung total Jadwalkuliah yang diajukan
+        $totalCount = Jadwalkuliah::count();
+
+        // Pass data ke view
+        return view('dekanDashboard', compact('JadwalkuliahForApproval', 'approvedCount', 'totalCount'));
     }
 
-    /**
-     * Reject the room.
-     */
-    public function rejectJadwalkuliah($id)
-    {
-        $jadwalkuliah = Jadwalkuliah::findOrFail($id);
-        $jadwalkuliah->status = 'Rejected'; // Tolak Jadwalkuliah
-        $jadwalkuliah->save();
 
-        // Kembali ke halaman persetujuan dengan notifikasi
-        return redirect()->route('jadwalkuliah.approval')->with('error', 'jadwalkuliah ditolak!');
-    }
-
+    
     
 
     public function dashboard()

@@ -22,5 +22,6 @@ class Jadwalkuliah extends Model
        'wkt_mulai',
        'wkt_selesai',
        'kuota',
+       'status',
     ];
 }
