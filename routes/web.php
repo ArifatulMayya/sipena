@@ -137,6 +137,9 @@ Route::get('/kpDashboard', function(){
     return view('kpDashboard');
 });
 
+Route::get('/kpKelolaMatkul', function(){
+    return view('kpKelolaMatkul');
+});
 
 Route::resource('jadwalkuliah', JadwalKuliahController::class);
 

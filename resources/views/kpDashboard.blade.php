@@ -34,7 +34,13 @@
                         <a href="/kpMahasiswa" class="block hover:bg-[#2D4995] rounded-lg px-4 py-2">Daftar Mahasiswa</a>
                     </li>
                     <li class="mx-4 py-2">
+                        <a href="/kpirsVerifikasi" class="block hover:bg-[#2D4995] rounded-lg px-4 py-2">Kelola Mata Kuliah</a>
+                    </li>
+                    <li class="mx-4 py-2">
                         <a href="/kpBuatJadwal" class="block hover:bg-[#2D4995] rounded-lg px-4 py-2">Jadwal Kuliah</a>
+                    </li>
+                    <li class="mx-4 py-2">
+                        <a href="/kpirsVerifikasi" class="block hover:bg-[#2D4995] rounded-lg px-4 py-2">Verifikasi IRS</a>
                     </li>
                     <li class="mx-4 py-2">
                         <a href="/kpirsVerifikasi" class="block hover:bg-[#2D4995] rounded-lg px-4 py-2">Verifikasi IRS</a>
