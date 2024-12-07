@@ -21,7 +21,8 @@ class DatabaseSeeder extends Seeder
         MatakuliahSeeder::class,
         MahasiswaSeeder::class,
         DosenSeeder::class,
-        RuangSeeder::class
+        RuangSeeder::class,
+        JadwalkuliahSeeder::class,
       ]);
     }
 }

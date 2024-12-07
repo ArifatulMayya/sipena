@@ -24,16 +24,16 @@ class JadwalKuliahController extends Controller
         $jadwalkuliahs = Jadwalkuliah::all();
 
         // Return the view with the Jadwalkuliah data
-        return view('kpBuatJadwal', compact('Jadwalkuliahs'));
+        return view('kpBuatJadwal', compact('jadwalkuliahs'));
     }
 
     public function showJadwalkuliahForApproval()
     {
         // Get all Jadwalkuliah that are pending approval (status = "Pending")
-        $jadwalkuliahForApproval = Jadwalkuliah::where('status', 'Pending')->get();
+        $data = Jadwalkuliah::where('status', 'Pending')->get();
 
         // Pass the data to the view
-        return view('dekanPersetujuanJadwalkuliah', compact('JadwalkuliahForApproval'));
+        return view('dekanPersetujuanJadwal', compact('data'));
     }
 
     public function index2()
@@ -138,6 +138,7 @@ class JadwalKuliahController extends Controller
             'status' => 'Pending', // Menetapkan status default sebagai "Pending"
         ];
         Jadwalkuliah::create($data);
+        // dd($data);
 
         // Redirect back with a success message
         return redirect()->back()->with('success', 'Jadwalkuliah berhasil ditambahkan!');

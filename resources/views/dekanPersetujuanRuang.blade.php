@@ -50,9 +50,7 @@
                                 <td class="py-3">{{ $ruang->lantai }}</td>
                                 <td class="py-3">{{ $ruang->kapasitas }}</td>
                                 <td class="py-3">{{ $ruang->keperluan }}</td>
-                                <td class="py-3">
-                                    {{ $ruang->status }}
-                                </td>
+                                <td class="py-3">{{ $ruang->status }}</td>
                                 <td class="flex py-3 justify-center">
                                     <form action="{{ route('ruang.approve', $ruang->id) }}" method="POST" class="mt-2 mr-1">
                                         @csrf

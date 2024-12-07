@@ -29,15 +29,26 @@
                             <th class="w-[10%] py-3">Kelas</th>
                             <th class="w-[15%] py-3">Nama Ruang</th>
                             <th class="w-[5%] py-3">SKS</th>
-                            <th class="w-[10%] py-3">Sifat</th>
                             <th class="w-[10%] py-3">Hari</th>
                             <th class="w-[10%] py-3">Waktu Mulai</th>
                             <th class="w-[10%] py-3">Waktu Selesai</th>
                             <th class="w-[10%] py-3">Kuota</th>
                         </tr>
                     </thead>
-                    </tbody>
                     <tbody>
+                        @foreach ($jadwalkuliahs as $jadwal)
+                            <tr>
+                                <td class="py-2">{{ $jadwal->kode_mk}} </td>
+                                <td class="py-2">{{ $jadwal->nama_mk}} </td>
+                                <td class="py-2">{{ $jadwal->kelas}} </td>
+                                <td class="py-2">{{ $jadwal->nama_ruang}} </td>
+                                <td class="py-2">{{ $jadwal->sks}} </td>
+                                <td class="py-2">{{ $jadwal->hari}} </td>
+                                <td class="py-2">{{ $jadwal->wkt_mulai}} </td>
+                                <td class="py-2">{{ $jadwal->wkt_selesai}} </td>
+                                <td class="py-2">{{ $jadwal->kuota}} </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -99,11 +110,11 @@
                         </select>
                     </div>
                     <div class="mb-4">
-                        <label for="jammulai" class="block text-sm font-medium text-gray-700">Waktu Mulai</label>
+                        <label for="wkt_mulai" class="block text-sm font-medium text-gray-700">Waktu Mulai</label>
                         <input type="time" id="jam" name="jam" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md" required>
                     </div>
                     <div class="mb-4">
-                        <label for="jamselesai" class="block text-sm font-medium text-gray-700">Waktu Selesai</label>
+                        <label for="wkt_selesai" class="block text-sm font-medium text-gray-700">Waktu Selesai</label>
                         <input type="time" id="jam" name="jam" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md" required>
                     </div>
                     <div class="mb-4">
@@ -148,10 +159,6 @@
     </div>
 
     <br>
-    <div class="flex justify-end items-center mb-4">
-        <div class="flex justify-end mr-10">
-            <button class="ml-4 px-4 py-2 bg-green-500 text-white rounded-lg !important">Ajukan</button>
-        </div>
     </div>
   </div>
 </div>
