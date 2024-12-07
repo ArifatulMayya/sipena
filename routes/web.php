@@ -31,7 +31,7 @@ Route::get('/baBuatRuang', [RuangController::class, 'buatRuang'])->name('ruang.b
 Route::resource('jadwalkuliah', JadwalKuliahController::class);
 
 Route::post('/jadwalkuliah', [JadwalKuliahController::class, 'store'])->name('jadwalkuliah.store');
-Route::get('/kpBuatJadwal', [JadwalKuliahController::class, 'buatJadwalKuliah'])->name('jadwal.buatJadwal');
+Route::get('/kpBuatRuang', [JadwalKuliahController::class, 'buatJadwalKuliah'])->name('jadwal.buatJadwal');
 
 
 Route::get('/registrasi', function () {
@@ -47,6 +47,7 @@ Route::get('/dekanDashboard', [RuangController::class, 'index2']);
 // Route::get('/dekanPersetujuanRuang', function (){
 //     return view('dekanPersetujuanRuang');
 // });
+
 
 Route::get('/dekanPersetujuanRuang', [RuangController::class, 'showRuangForApproval'])->name('ruang.approval');
 Route::get('/dekanPersetujuanJadwal', [JadwalKuliahController::class, 'showJadwalkuliahForApproval'])->name('showJadwalkuliahForApproval');
@@ -68,9 +69,9 @@ Route::get('/', function () {
     return view('login');
 });
 
-// Route::get('/dashboardPA', function () {
-//     return view('dashboardPA');
-// });
+Route::get('/dashboardPA', function () {
+    return view('dashboardPA');
+});
 Route::get('/dosenBimbingan', [MahasiswaController::class, 'index'])->name('mahasiswa.index');
 Route::get('/dosenBimbingan/urutkan', [MahasiswaController::class, 'urutkan'])->name('mahasiswa.urutkan');
 Route::get('dosenBimbingan/cari',[MahasiswaController::class,'cari'])->name('mahasiswa.cari');
@@ -86,7 +87,7 @@ Route::get('/studi', function () {
 Route::get('/dosenPengajuanIRS', [MahasiswaController::class, 'index1'])->name('mahasiswa.index1');
 Route::get('/dosenPengajuanIRS/urutkan', [MahasiswaController::class, 'urutkan1'])->name('mahasiswa.urutkan1');
 Route::get('dosenPengajuanIRS/cari',[MahasiswaController::class,'cari1'])->name('mahasiswa.cari1');
-
+Route::get('/kpBuatJadwal',[JadwalKuliahController::class,'buatJadwalkuliah'])->name('buatJadwalkuliah');
 
 
 Route::get('/buatIRSMhs', function () {

@@ -23,7 +23,6 @@
                             <th class="w-[5%] py-3">Kelas</th>
                             <th class="w-[15%] py-3">Waktu</th>
                             <th class="w-[10%] py-3">Ruang</th>
-                            <th class="w-[20%] py-3">Dosen Pengampu</th>
                             <th class="w-[20%] py-3">Status</th>
                             <th class="w-[30%] py-3">Aksi</th>
                         </tr>
@@ -35,19 +34,14 @@
                                 <td class="py-3">{{ $jadwal->kelas }}</td>
                                 <td class="py-3">{{ $jadwal->wkt_mulai }} - {{ $jadwal->wkt_selesai }}</td>
                                 <td class="py-3">{{ $jadwal->nama_ruang }}</td>
-                                <td class="py-3">{{ $jadwal->dosen_pengampu }}</td>
                                 <td class="py-3">{{ $jadwal->status }}</td>
                                 <td class="py-3">
-                                    <form action="{{ route('jadwal.approve', $jadwal->id) }}" method="POST" class="mt-2 mr-1 inline-block">
+                                    <form action="{{ route('jadwalkuliah.approve', $jadwal->id) }}" method="POST" class="mt-2 mr-1 inline-block">
                                         @csrf
                                         @method('PUT')
                                         <button class="bg-green-400 w-24 py-1 rounded-lg" type="submit">Setuju</button>
-                                    </form>
-                                    <form action="{{ route('jadwal.reject', $jadwal->id) }}" method="POST" class="mt-2 ml-1 inline-block">
-                                        @csrf
-                                        @method('PUT')
-                                        <button class="bg-red-600 w-24 py-1 rounded-lg" type="submit">Tolak</button>
-                                    </form>
+                                    </form>                                    
+                                
                                 </td>
                             </tr>
                         @endforeach
