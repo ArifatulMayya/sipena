@@ -15,6 +15,7 @@ class Matakuliah extends Model
         'kode_mk',
         'nama_mk',
         'sks',
-        'semester',
+        'sifat',
+        'smt',
     ];
 }
