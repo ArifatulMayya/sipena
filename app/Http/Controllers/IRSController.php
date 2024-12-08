@@ -32,6 +32,8 @@ class IRSController extends Controller
             return response()->json(['success' => false, 'message' => 'Terjadi kesalahan saat menyimpan data'], 500);
         }
     }
+
+    
 }
 
 ?>
