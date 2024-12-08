@@ -90,7 +90,9 @@
                         <select id="nama_ruang" name="nama_ruang" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md" required>
                             <option value="" disabled selected>Pilih Ruangan</option>
                             @foreach ($approvedRuangs as $ruang)
-                                <option value="{{ $ruang->no_ruang }}">{{ $ruang->no_ruang }}</option>
+                                @if ($ruang->prodi === 'Informatika')  <!-- Menambahkan kondisi untuk prodi Informatika -->
+                                    <option value="{{ $ruang->no_ruang }}">{{ $ruang->no_ruang }}</option>
+                                @endif
                             @endforeach
                         </select>
                     </div>

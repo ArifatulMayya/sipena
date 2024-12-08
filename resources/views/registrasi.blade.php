@@ -79,14 +79,6 @@
         </div>
     </div>
 
-    <!-- Modal (Sweet Alert Style) -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <h2 id="modal-message" class="font-bold text-xl"></h2>
-            <button class="bg-blue-500 text-white py-2 px-4 rounded-md mt-4 hover:bg-blue-700" onclick="closeModal()">OK</button>
-        </div>
-    </div>
-
     <script>
         // Variable to track if status has been selected
         let isStatusSelected = false;
@@ -140,3 +132,31 @@
 </body>
 
 </html>
+
+@if (session('success'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Berhasil!',
+            text: '{{ session('success') }}',  // Pastikan ini mengandung string yang benar
+            showConfirmButton: true,
+            timer: 3000
+        });
+    </script>
+@endif  
+
+@if (session('error'))
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Gagal!',
+            text: '{{ session('error') }}',
+            showConfirmButton: true,
+            timer: 5000  // Optional: Auto-close after 5 seconds
+        });
+    </script>
+@endif
+
+        
+        
+        

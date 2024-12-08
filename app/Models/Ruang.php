@@ -14,6 +14,7 @@ class Ruang extends Model
        'no_ruang',
        'blok_gedung',
        'lantai',
+       'prodi',
        'kapasitas',
        'keperluan',
        'status',

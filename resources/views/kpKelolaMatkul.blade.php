@@ -149,12 +149,25 @@
         Swal.fire({
             icon: 'success',
             title: 'Berhasil!',
-            text: '{{ session('success') }}',
+            text: '{{ session('success') }}',  // Pastikan ini mengandung string yang benar
             showConfirmButton: true,
             timer: 3000
         });
     </script>
 @endif  
+
+@if (session('error'))
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Gagal!',
+            text: '{{ session('error') }}',
+            showConfirmButton: true,
+            timer: 5000  // Optional: Auto-close after 5 seconds
+        });
+    </script>
+@endif
+
         
         
         
