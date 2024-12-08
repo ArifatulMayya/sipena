@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Jadwalkuliah;
+use App\Models\Matakuliah;
 use App\Models\Ruang;
 use Illuminate\Http\Request;
 
@@ -24,9 +25,10 @@ class JadwalKuliahController extends Controller
         // Fetch all Jadwalkuliah records from the database
         $jadwalkuliahs = Jadwalkuliah::all();
         $approvedRuangs = Ruang::where('status', 'Approved')->get();
+        $matkuls = Matakuliah::all();
 
         // Return the view with the Jadwalkuliah data
-        return view('kpBuatJadwal', compact('jadwalkuliahs', 'approvedRuangs'));
+        return view('kpBuatJadwal', compact('jadwalkuliahs', 'approvedRuangs', 'matkuls'));
     }
 
     public function showJadwalkuliahForApproval()
@@ -38,6 +40,14 @@ class JadwalKuliahController extends Controller
         return view('dekanPersetujuanJadwal', compact('data'));
     }
     
+    // public function matkulJadwalkuliah()
+    // {
+    //     // Fetch all Jadwalkuliah records from the database
+    //     $matkuls = Matakuliah::all();
+
+    //     // Return the view with the Jadwalkuliah data
+    //     return view('kpBuatJadwal', compact('matkuls'));
+    // }
     
     public function index2()
     {
@@ -153,5 +163,14 @@ class JadwalKuliahController extends Controller
 
         // Redirect back with a success message
         return redirect()->back()->with('success', 'Jadwalkuliah berhasil ditambahkan!');
+    }
+
+    // Hapus mata kuliah
+    public function destroy($id)
+    {
+        $jadwalkuliah = Jadwalkuliah::findOrFail($id);
+        $jadwalkuliah->delete();
+
+        return redirect()->route('jadwalkulia')->with('success', 'Jadwal berhasil dihapus!');
     }
 }
