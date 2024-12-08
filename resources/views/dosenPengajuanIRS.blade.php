@@ -114,8 +114,22 @@
                 </tbody>
               </table>
               <div class="flex justify-end mt-4">
-                <button class="bg-green-500 text-white p-2 rounded mr-2 hover:bg-green-700">Setuju</button>
-                <button class="bg-red-500 text-white p-2 rounded hover:bg-red-700">Tolak</button>
+                <!-- Tombol Setuju -->
+                <button class="bg-green-500 text-white p-2 rounded mr-2 hover:bg-green-700 setuju-button"
+                        data-id="{{ $loop->iteration }}">
+                  Setuju
+                </button>
+                <!-- Tombol Tolak -->
+                <button class="bg-red-500 text-white p-2 rounded hover:bg-red-700 tolak-button"
+                        data-id="{{ $loop->iteration }}">
+                  Tolak
+                </button>
+          
+                <!-- Tombol Print IRS, disembunyikan terlebih dahulu -->
+                <button class="bg-blue-500 text-white p-2 rounded mt-2 hidden print-irs-button" 
+                        id="print-irs-{{ $loop->iteration }}">
+                  Print IRS
+                </button>
               </div>
             </td>
           </tr>
@@ -159,6 +173,7 @@
         });
     });
   </script>
+  
 
 </body>
 </html>

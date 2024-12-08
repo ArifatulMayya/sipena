@@ -14,8 +14,8 @@
             <div class="bg-[#AEC0F1] p-6">
                 <h1 class="text-center text-xl font-bold mb-4">Perkembangan Studi</h1>
                 <div class="mb-4">
-                    <p>Nama : Stefani Mayya Febria Hutagalung</p>
-                    <p>NIM : 24060122129800</p>
+                    <p>Nama : {{ $nama }}</p>
+                    <p>NIM : {{ $nim }}</p>
                 </div>
                 <table class="w-full bg-white rounded-md overflow-hidden">
                     <thead class="bg-blue-800 text-white">

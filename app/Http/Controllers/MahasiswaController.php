@@ -68,5 +68,15 @@ class MahasiswaController extends Controller
         return view('dashboardPA', compact('jumlahPengajuan'));  
     }
     
+    public function printIrs($id) {
+        $mahasiswa = Mahasiswa::find($id);
+        return view('print-irs', compact('mahasiswa'));
+    }
+    
+    public function perkembanganstudi(Request $request){
+        $nim=$request->query('nim');
+        $nama=$request->query('nama');
+        return view('studi',compact('nim','nama'));
+    }
     
 }

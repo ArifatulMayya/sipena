@@ -53,7 +53,7 @@
           <td class="p-2">{{ $mhs->nama }}</td>
           <td class="p-2 text-center">{{ $mhs->semester }}</td>
           <td class="p-2 text-center">
-            <a href="/studi" class="px-4 py-2 bg-orange-500 hover:bg-orange-700 text-white rounded-lg">Detail</a>
+            <a href="{{ route('studi',['nim'=>$mhs->nim,'nama'=>$mhs->nama]) }}" class="px-4 py-2 bg-orange-500 hover:bg-orange-700 text-white rounded-lg">Detail</a>
           </td>
         </tr>
         @empty
