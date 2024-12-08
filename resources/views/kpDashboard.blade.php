@@ -13,7 +13,7 @@
     <!--profile section-->
     <div class=" mx-8 pl-5 pr-11 pt-20">
         <div class="bg-[#10296E] px-8 rounded-2xl rounded-b-none py-4 font-bold text-white">
-            <h1>AYAM UNDIP</h1>
+            <h1>Dr. Strange</h1>
         </div>
         <div class="flex justify-between items-center bg-[#2D4995] px-8 rounded-2xl rounded-t-none py-4 font-bold text-white">
             <h1>NIP : 8765876666</h1>

@@ -134,7 +134,7 @@ class JadwalKuliahController extends Controller
         $request->validate([
             'kode_mk' => 'required|string|max:10', // Kode mata kuliah
             'nama_mk' => 'required|string|max:255', // Nama mata kuliah
-            'kelas' => 'required|integer|min:1', // Nomor kelas
+            'kelas' => 'required|string|max:1', // Nomor kelas
             'hari' => 'required|string|max:10', // Hari (misalnya "Senin", "Selasa")
             'nama_ruang' => 'required|string|max:50', // Nama ruangan
             'sks' => 'required|integer|min:1|max:6', // Jumlah SKS (1-6)
@@ -171,6 +171,28 @@ class JadwalKuliahController extends Controller
         $jadwalkuliah = Jadwalkuliah::findOrFail($id);
         $jadwalkuliah->delete();
 
-        return redirect()->route('jadwalkulia')->with('success', 'Jadwal berhasil dihapus!');
+        return redirect()->back()->with('success', 'Jadwal berhasil dihapus!');
     }
+
+    public function pilihJadwalKuliah()
+    {
+        // Fetch all Jadwalkuliah records from the database
+        $jadwalkuliahs = Jadwalkuliah::all();
+        $approvedjadwals = JadwalKuliah::where('status', 'Approved')->get();
+        $matkuls = Matakuliah::all();
+
+        // Return the view with the Jadwalkuliah data
+        return view('kpBuatJadwal', compact('jadwalkuliahs', 'approvedRuangs', 'matkuls'));
+    }
+
+    public function showApprovedJadwalKuliahirs()
+    {
+    // Mengambil semua data Jadwalkuliah yang sudah disetujui
+    $approvedJadwalkuliahirs = Jadwalkuliah::where('status', 'Approved')->get();
+
+    // Mengirimkan data ke view 'buatIRSMhs'
+    return view('buatIRSMhs', compact('approvedJadwalkuliahirs'));
+    }
+    
 }
+

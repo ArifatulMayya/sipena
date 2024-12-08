@@ -11,7 +11,7 @@
     <x-navbar></x-navbar>
     <div class="mx-12 pt-20">
         <div class="bg-[#10296E] px-8 rounded-2xl rounded-b-none py-4 font-bold text-white">
-            <h1>Kaesang Pangarep</h1>
+            <h1>Prof. Thanos</h1>
         </div>
         <div class="bg-[#2D4995] px-8 rounded-2xl rounded-t-none py-4 font-bold text-white">
             <h1>NIP : 9876502814714945</h1>

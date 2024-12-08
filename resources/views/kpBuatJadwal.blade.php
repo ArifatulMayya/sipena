@@ -93,11 +93,11 @@
                         <label for="kelas" class="block text-sm font-medium text-gray-700">Kelas</label>
                         <select id="kelas" name="kelas" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md" required>
                             <option value="" disabled selected>Pilih Kelas</option>
-                            <option value="1">A</option>
-                            <option value="2">B</option>
-                            <option value="3">C</option>
-                            <option value="4">D</option>
-                            <option value="5">E</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
+                            <option value="E">E</option>
                         </select>
                     </div>
                     <div class="mb-4">
@@ -152,12 +152,6 @@
                     <button type="button" id="closeModal" class="bg-gray-400 text-white px-4 py-2 rounded-lg">Batal</button>
                     <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg">Simpan</button>
                 </div>
-
-                <form action="{{ route('jadwalkuliah.destroy', $jadwal->id) }}" method="POST" class="inline-block">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="px-4 py-2 bg-red-600 text-white rounded-lg">Hapus</button>
-                </form>
             </form>
             
         </div>

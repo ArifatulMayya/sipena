@@ -3,7 +3,7 @@
         <li>
             <img src="{{asset('minion.jpg')}}" class="rounded-full mx-auto" width="100" alt="">
         </li>
-        <li class="font-bold mt-4">Kaesang Pangarep</li>
+        <li class="font-bold mt-4">Prof. Thanos</li>
         <li class="border-b font-normal pb-2">NIP :  9876502814714945</li>
     </ul>
     <ul class="space-y-2 my-4">
