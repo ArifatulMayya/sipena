@@ -3,7 +3,7 @@
         <li>
             <img src="{{asset('minion.jpg')}}" class="rounded-full mx-auto" width="100" alt="">
         </li>
-        <li class="font-bold mt-4">Stefani Mayya Febria Hutagalung</li>
+        <li class="font-bold mt-4">Stefani Mayya Febria</li>
         <li class="border-b font-normal pb-2">NIM : 24060122129800</li>
     </ul>
     <ul class="space-y-2 my-4">

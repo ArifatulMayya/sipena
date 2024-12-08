@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Database\Schema\ForeignIdColumnDefinition;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -14,16 +13,12 @@ return new class extends Migration
     {
         Schema::create('irs', function (Blueprint $table) {
             $table->id();
-            $table->string('kode_mk');
-            $table->string('nama_mk');
-            $table->string('kelas');
-            $table->string('hari');
-            $table->string('nama_ruang');
-            $table->integer('sks');
-            $table->time('wkt_mulai');
-            $table->time('wkt_selesai');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('jadwal_kuliah_id')->constrained()->onDelete('cascade');
+            $table->enum('status', ['pilih', 'dihapus'])->default('pilih');
             $table->timestamps();
         });
+        
     }
 
     /**
@@ -31,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('irs');
+        Schema::dropIfExists('choose_irs');
     }
 };

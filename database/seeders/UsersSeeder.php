@@ -33,46 +33,29 @@ class UsersSeeder extends Seeder
                 'password' => Hash::make('12345678'),
                 'role' => 'mahasiswa',
             ],
-            [
-                'nama' => 'Doctor Strange',
-                'email' => 'kangsihir@students.undip.ac.id',
-                'password' => Hash::make('12345678'),
-                'role' => 'mahasiswa',
-            ],
-            [
-                'nama' => 'Thanos',
-                'email' => 'ubiungu@students.undip.ac.id',
-                'password' => Hash::make('12345678'),
-                'role' => 'mahasiswa',
-            ],
+            
 
             // Dekan
             [
-                'nama' => 'Prof. Adam White',
-                'email' => 'adam.white@example.com',
+                'nama' => 'Prof. Thanos',
+                'email' => 'ubiungu@lecturer.undip.ac.id',
                 'password' => Hash::make('12345678'),
                 'role' => 'dekan',
             ],
 
             // Kaprodi
             [
-                'nama' => 'Dr. Susan Black',
-                'email' => 'susan.black@example.com',
+                'nama' => 'Dr. Strange',
+                'email' => 'kangsihir@lecturer.undip.ac.id',
                 'password' => Hash::make('12345678'),
                 'role' => 'kaprodi',
             ],
 
-            [
-                'nama' => 'Ayam Undip',
-                'email' => 'ayam@example.com',
-                'password' => Hash::make('12345678'),
-                'role' => 'kaprodi',
-            ],
 
             // Bagian Akademik
             [
-                'nama' => 'Alice Grey',
-                'email' => 'alice.grey@example.com',
+                'nama' => 'Benny',
+                'email' => 'bennyganteng@lecturer.undip.ac.id',
                 'password' => Hash::make('12345678'),
                 'role' => 'bagian akademik',
             ],

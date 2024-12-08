@@ -1,9 +1,9 @@
 <nav class="w-1/4 bg-[#10296E] text-white h-screen p-4 ">
   
    <div class="flex flex-col items-center mb-8 pt-6">
-      <img alt="Profile Picture" class="w-24 h-24 rounded-full bg-gray-300" height="100" width="100"/>
+   <img src="{{asset('minion.jpg')}}" class="rounded-full mx-auto" width="100" alt="">
       <div class="ml-4 text-center">
-         <p class="font-bold">Margaret Tatcher <p>
+         <p class="font-bold">Dr. Strange <p>
          <p> NIP:76527393</p>
       </div>
    </div>

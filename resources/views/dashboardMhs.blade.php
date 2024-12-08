@@ -12,7 +12,7 @@
 
     <div class="mx-12 pt-16">
         <div class="bg-[#10296E] mt-6 px-8 rounded-2xl rounded-b-none py-4 font-bold text-white">
-            <h1>Stefani Mayya Febria Hutagalung</h1>
+            <h1>Stefani Mayya Febria</h1>
         </div>
         <div class="bg-[#2D4995] px-8 rounded-2xl rounded-t-none py-4 font-bold text-white">
             <h1>NIM : 24060122129800  |  Informatika S1</h1>

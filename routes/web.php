@@ -52,6 +52,7 @@ Route::get('/dekanDashboard', [RuangController::class, 'index2']);
 //     return view('dekanPersetujuanRuang');
 // });
 
+Route::post('/pilih-irs/{jadwal_id}', [IRSController::class, 'pilihIRS']);
 
 Route::get('/dekanPersetujuanRuang', [RuangController::class, 'showRuangForApproval'])->name('ruang.approval');
 Route::get('/dekanPersetujuanJadwal', [JadwalKuliahController::class, 'showJadwalkuliahForApproval'])->name('showJadwalkuliahForApproval');
@@ -110,9 +111,11 @@ Route::post('/irs/setuju', [IRSController::class, 'store'])->name('irs.store');
 Route::get('/kpBuatJadwal',[JadwalKuliahController::class,'buatJadwalkuliah'])->name('buatJadwalkuliah');
 // Route::get('/kpBuatJadwal',[JadwalKuliahController::class,'matkulJadwalkuliah'])->name('matkulJadwalkuliah');
 
-Route::get('/buatIRSMhs', function () {
-    return view('buatIRSMhs');
-});
+// Route::get('/buatIRSMhs', function () {
+//     return view('buatIRSMhs');
+// });
+
+Route::get('/buatIRSMhs', [IRSController::class, 'buatIrs'])->name('irs.buatIrs');
 
 Route::get('/irsMhs', function () {
     return view('irsMhs');
@@ -171,9 +174,9 @@ Route::get('/kpKelolaMatkul', function(){
     return view('kpKelolaMatkul');
 });
 
-Route::delete('/jadwalkuliah/{id}', [JadwalKuliahController::class, 'destroy'])->name('jadwalkuliah.destroy');
+// Route::delete('/jadwalkuliah/{id}', [JadwalKuliahController::class, 'destroy'])->name('jadwalkuliah.destroy');
 
-Route::delete('jadwalkuliah/{id}', [JadwalKuliahController::class, 'destroy'])->name('jadwalkuliah.destroy');
+Route::post('jadwalkuliah/{id}', [JadwalKuliahController::class, 'destroy'])->name('jadwalkuliah.destroy');
 
 Route::resource('jadwalkuliah', JadwalKuliahController::class);
 
@@ -184,3 +187,8 @@ Route::get('matkul/{id}/edit', [MatkulController::class, 'edit'])->name('matkul.
 Route::put('matkul/{id}', [MatkulController::class, 'update'])->name('matkul.update');
 Route::delete('matkul/{id}', [MatkulController::class, 'destroy'])->name('matkul.destroy');
 
+
+
+//Route::get('/kpBuatJadwal',[JadwalKuliahController::class,'buatJadwalkuliah'])->name('buatJadwalkuliah');
+//IRSBUATMHS
+// Route::get('/buatIRSMhs', [JadwalKuliahController::class, 'showApprovedJadwalKuliahirs'])->name('showApprovedJadwalKuliahirs');
