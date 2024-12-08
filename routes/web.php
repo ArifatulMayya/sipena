@@ -85,9 +85,8 @@ Route::get('/', function () {
     return view('login');
 });
 
-Route::get('/dashboardPA', function () {
-    return view('dashboardPA');
-});
+Route::get('/dashboardPA', [MahasiswaController::class, 'pengajuanIrs'])->name('pengajuanIrs');
+
 Route::get('/dosenBimbingan', [MahasiswaController::class, 'index'])->name('mahasiswa.index');
 Route::get('/dosenBimbingan/urutkan', [MahasiswaController::class, 'urutkan'])->name('mahasiswa.urutkan');
 Route::get('dosenBimbingan/cari',[MahasiswaController::class,'cari'])->name('mahasiswa.cari');

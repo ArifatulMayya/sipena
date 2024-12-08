@@ -128,8 +128,19 @@
       </table>
 
       <!-- Pagination -->
-      <div class="mt-4">
-        {{ $mahasiswa->appends(['sort' => $sort])->links('pagination::tailwind') }}
+      <div class="w-full mt-4 flex justify-between items-center">
+        @if ($mahasiswa->onFirstPage())
+        <button class="px-4 py-2 bg-gray-400 text-white rounded-lg cursor-not-allowed" disabled>Previous</button>
+      @else
+        <a href="{{ $mahasiswa->previousPageUrl() }}" class="px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded-lg">Previous</a>
+      @endif
+    
+      <!-- Next Button -->
+      @if ($mahasiswa->hasMorePages())
+        <a href="{{ $mahasiswa->nextPageUrl() }}" class="px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded-lg ml-4">Next</a>
+      @else
+        <button class="px-4 py-2 bg-gray-400 text-white rounded-lg ml-4 cursor-not-allowed" disabled>Next</button>
+      @endif
       </div>
     </div>
   </div>
