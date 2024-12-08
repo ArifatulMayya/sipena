@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('no_ruang');
             $table->string('blok_gedung');
             $table->integer('lantai');
+            $table->string('prodi');
             $table->integer('kapasitas');
             $table->string('keperluan');
             $table->string('status');

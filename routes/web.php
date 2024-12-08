@@ -51,8 +51,14 @@ Route::get('/dekanDashboard', [RuangController::class, 'index2']);
 
 Route::get('/dekanPersetujuanRuang', [RuangController::class, 'showRuangForApproval'])->name('ruang.approval');
 Route::get('/dekanPersetujuanJadwal', [JadwalKuliahController::class, 'showJadwalkuliahForApproval'])->name('showJadwalkuliahForApproval');
-Route::put('/ruang/{id}/approve', [RuangController::class, 'approveRuang'])->name('ruang.approve');
+
+
+Route::post('/ruang/approve', [RuangController::class, 'approveRuang'])->name('ruang.approve');
+Route::post('/ruang/approve-all', [RuangController::class, 'approveAll'])->name('ruang.approveAll');
 Route::put('/ruang/{id}/reject', [RuangController::class, 'rejectRuang'])->name('ruang.reject');
+Route::post('/jadwal/approve', [JadwalKuliahController::class, 'approve'])->name('jadwal.approve');
+Route::post('/jadwal/approve-all', [JadwalKuliahController::class, 'approveAll'])->name('jadwal.approveAll');
+Route::post('/jadwal/reject', [JadwalKuliahController::class, 'reject'])->name('jadwal.reject');
 Route::get('/kpBuatJadwal', [RuangController::class, 'formWithApprovedRuangan'])->name('form.ruangan');
 
 // Route::get('/dekanPersetujuanJadwal', function (){
@@ -60,6 +66,16 @@ Route::get('/kpBuatJadwal', [RuangController::class, 'formWithApprovedRuangan'])
 // });
 
 Route::get('/baDashboard', [RuangController::class, 'index'])->name('index');
+Route::delete('ruang/{id}', [RuangController::class, 'destroy'])->name('ruang.destroy');
+Route::get('/check-ruang/{no_ruang}', function ($noRuang) {
+    $ruang = Ruang::where('no_ruang', $noRuang)->first();
+
+    if ($ruang) {
+        return response()->json(['exists' => true, 'prodi' => $ruang->prodi]);
+    }
+
+    return response()->json(['exists' => false]);
+});
 
 // Route::get('/baBuatRuang', function (){
 //     return view('baBuatRuang');

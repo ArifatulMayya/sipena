@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ruang;
+use App\Models\JadwalKuliah;
 use Illuminate\Http\Request;
 
 class RuangController extends Controller
@@ -41,30 +42,35 @@ class RuangController extends Controller
     {
         // Get the total number of room submissions
         $totalRuang = Ruang::count();
+        // Get the total number of room submissions
+        $totalJadwal = Jadwalkuliah::count();
 
         // Get the number of approved room submissions
         $approvedRuang = Ruang::where('status', 'Approved')->count();
+        $approvedJadwal = JadwalKuliah::where('status', 'Approved')->count();
 
         // Pass the data to the view
-        return view('dekanDashboard', compact('totalRuang', 'approvedRuang'));
+        return view('dekanDashboard', compact('totalRuang', 'totalJadwal','approvedRuang','approvedJadwal'));
     }
 
 
     /**
      * Approve the room.
      */
-    public function approveRuang($id)
+    public function approveRuang(Request $request)
     {
-        $ruang = Ruang::findOrFail($id);
-        $ruang->status = 'Approved'; // Setujui ruang
-        $ruang->save();
-
-        // Perbarui jumlah pengajuan yang disetujui
-        $approvedCount = Ruang::where('status', 'Approved')->count();
-
-        // Kembali ke halaman persetujuan dengan notifikasi
-        return redirect()->route('ruang.approval')->with('success', 'Ruang disetujui! Jumlah pengajuan yang disetujui: ' . $approvedCount);
+        $request->validate([
+            'no_ruang' => 'required'
+        ]);
+    
+        // Update 'Pending' status to 'Disetujui'
+        Ruang::where('no_ruang', $request->no_ruang)
+            ->where('status', 'Pending')
+            ->update(['status' => 'Approved']);
+    
+        return response()->json(['message' => 'Jadwal has been approved for ' . $request->kode_mk]);
     }
+
 
     /**
      * Reject the room.
@@ -101,22 +107,55 @@ class RuangController extends Controller
             'no_ruang' => 'required|string|max:10',
             'blok_gedung' => 'required|string|max:1',
             'lantai' => 'required|integer|min:1',
+            'prodi' => 'required|string|min:1|max:20',
             'kapasitas' => 'required|integer|min:1',
             'keperluan' => 'required|string|max:255',
         ]);
 
-        // Create a new Ruang record and save it to the database
-        $data = [
-            'no_ruang' => $request->input('no_ruang'),
-            'blok_gedung' => $request->input('blok_gedung'),
-            'lantai' => $request->input('lantai'),
-            'kapasitas' => $request->input('kapasitas'),
-            'keperluan' => $request->input('keperluan'),
-            'status' => 'Pending',
-        ];
-        Ruang::create($data);
+
+         // Cek apakah ruang sudah ada di database
+            $existingRoom = Ruang::where('no_ruang', $request->no_ruang)->first();
+
+            if ($existingRoom) {
+                // Jika ruang sudah ada, cek apakah prodi berbeda
+                if ($existingRoom->prodi !== $request->prodi) {
+                    // Jika prodi berbeda, tampilkan pesan error dan jangan simpan data
+                    return redirect()->route('ruang.buatRuang')->with('error', 'Ruang ini sudah dipakai oleh prodi lain!');
+                } else {
+                    // Jika ruang dan prodi sama, tampilkan pesan error
+                    return redirect()->route('ruang.buatRuang')->with('error', 'Data sudah ada dalam database!');
+                }
+            }
+
+            // Jika tidak ada duplikasi atau masalah lain, simpan data baru
+            // Menyimpan data baru ke dalam array
+            $data = [
+                'no_ruang' => $request->input('no_ruang'),
+                'blok_gedung' => $request->input('blok_gedung'),
+                'lantai' => $request->input('lantai'),
+                'prodi' => $request->input('prodi'),
+                'kapasitas' => $request->input('kapasitas'),
+                'keperluan' => $request->input('keperluan'),
+                'status' => 'Pending',  // Default status
+            ];
+
+            // Simpan data ke database hanya jika tidak ada masalah
+            Ruang::create($data);
+
+            // Redirect dengan pesan sukses setelah data disimpan
+            return redirect()->route('ruang.buatRuang')->with('success', 'Ruang berhasil ditambahkan!');
+        }
+
+        // Hapus mata kuliah
+        public function destroy($id)
+        {
+            $ruang = Ruang::findOrFail($id);
+            $ruang->delete();
+
+            return redirect()->route('ruang.buatRuang')->with('success', 'Mata kuliah berhasil dihapus!');
+        }
+     }
 
         // Redirect back with a success message
-        return redirect()->back()->with('success', 'Ruang berhasil ditambahkan!');
-    }
-}
+        //return redirect()->back()->with('success', 'Ruang berhasil ditambahkan!'
+

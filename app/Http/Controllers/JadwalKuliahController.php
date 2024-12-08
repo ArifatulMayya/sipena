@@ -32,7 +32,7 @@ class JadwalKuliahController extends Controller
     public function showJadwalkuliahForApproval()
     {
         // Get all Jadwalkuliah that are pending approval (status = "Pending")
-        $data = Jadwalkuliah::where('status', 'Pending')->get();
+        $data = Jadwalkuliah::all();
 
         // Pass the data to the view
         return view('dekanPersetujuanJadwal', compact('data'));
@@ -67,9 +67,6 @@ class JadwalKuliahController extends Controller
     }
 
 
-    
-    
-
     public function dashboard()
     {
         // Fetch the count of all Jadwalkuliah records
@@ -79,6 +76,44 @@ class JadwalKuliahController extends Controller
         return view('baDashboard', compact('totalPengajuanJadwalkuliah'));
     }
 
+    public function approve(Request $request)
+    {
+        $request->validate([
+            'kode_mk' => 'required'
+        ]);
+    
+        // Update 'Pending' status to 'Disetujui'
+        Jadwalkuliah::where('kode_mk', $request->kode_mk)
+            ->where('status', 'Pending')
+            ->update(['status' => 'Approved']);
+    
+        return response()->json(['message' => 'Jadwal has been approved for ' . $request->kode_mk]);
+    }
+
+    public function approveAll()
+    {
+        // Update all 'Pending' Jadwal entries to 'Approved'
+        Jadwalkuliah::where('status', 'Pending')->update(['status' => 'Approved']);
+
+        // Return a JSON response or redirect with a success message
+        return response()->json(['message' => 'All pending Jadwal have been approved.']);
+    }
+
+
+    public function reject(Request $request)
+    {
+        $request->validate([
+            'kode_mk' => 'required'
+        ]);
+    
+        // Update 'Pending' status to 'Disetujui'
+        Jadwalkuliah::where('kode_mk', $request->kode_mk)
+            ->where('status', 'Pending')
+            ->update(['status' => 'Rejected']);
+    
+        return response()->json(['message' => 'Jadwal has been approved for ' . $request->kode_mk]);
+    }
+    
     
     /**
      * Store a newly created resource in the database.
