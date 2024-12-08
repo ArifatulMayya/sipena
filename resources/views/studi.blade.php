@@ -49,8 +49,12 @@
                 </table>
                 <div class="mt-4 text-right">
                     <p class="text-left inline-block">SKS Kumulatif : 66</p><br>
-                    <p class="text-left inline-block">IP Kumulatif : 3.8</p>
+                    <p class="text-left inline-block">IP Kumulatif : 3.8</p><br>
+                    <button onclick="window.print()" class="mt-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 text-bold transition">
+                        Print KHS
+                    </button>
                 </div>
+
             </div>
         </div>
    </div>
