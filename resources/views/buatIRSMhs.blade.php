@@ -51,16 +51,17 @@
                           <div class=" relative">
                           <div class="grid grid-cols-7 border-t border-gray-200 sticky top-0 left-0 w-full">
                             <div class="p-3.5 flex items-center justify-center text-sm font-medium  text-gray-900"></div>
-                            <div class="p-3.5 flex items-center justify-center text-sm font-medium  text-gray-900">Jan 7</div>
-                            <div class="p-3.5 flex items-center justify-center text-sm font-medium  text-gray-900">Jan 8</div>
-                            <div class="p-3.5 flex items-center justify-center text-sm font-medium  text-indigo-600">Jan 9</div>
-                            <div class="p-3.5 flex items-center justify-center text-sm font-medium  text-gray-900">Jan 10</div>
-                            <div class="p-3.5 flex items-center justify-center text-sm font-medium  text-gray-900">Jan 11</div>
-                            <div class="p-3.5 flex items-center justify-center text-sm font-medium  text-gray-900">Jan 12</div>
+                            <div class="p-3.5 flex items-center justify-center text-sm font-medium  text-gray-900">Senin</div>
+                            <div class="p-3.5 flex items-center justify-center text-sm font-medium  text-gray-900">Selasa</div>
+                            <div class="p-3.5 flex items-center justify-center text-sm font-medium  text-indigo-600">Rabu</div>
+                            <div class="p-3.5 flex items-center justify-center text-sm font-medium  text-gray-900">Kamis</div>
+                            <div class="p-3.5 flex items-center justify-center text-sm font-medium  text-gray-900">Jumat</div>
+                            <div class="p-3.5 flex items-center justify-center text-sm font-medium  text-gray-900">Sabtu</div>
+                           
                           </div>
                           <div class="hidden grid-cols-7 sm:grid w-full overflow-x-auto">
                             <div class="h-32 lg:h-28 p-0.5 md:p-3.5   border-t border-r border-gray-200 flex items-end transition-all hover:bg-stone-100">
-                              <span class="text-xs font-semibold text-gray-400">07:00 am</span>
+                              <span class="text-xs font-semibold text-gray-400">06:00 am</span>
                             </div>
                             <div class="h-32 lg:h-28 p-0.5 md:p-3.5   border-t border-r border-gray-200 transition-all hover:bg-stone-100"></div>
                             <div class="h-32 lg:h-28 p-0.5 md:p-3.5   border-t border-r border-gray-200 transition-all hover:bg-stone-100"></div>
@@ -73,14 +74,14 @@
                             <div class="h-32 lg:h-28 p-0.5 md:p-3.5   border-t border-r border-gray-200 transition-all hover:bg-stone-100">
                               <div class="rounded p-1.5 border-l-2 border-green-600 bg-green-50">
                                 <p class="text-xs font-normal text-gray-900 mb-px">Workout and Yoga Session</p>
-                                <p class="text-xs font-semibold text-green-600">06:00 - 07:55</p>
+                                <p class="text-xs font-semibold text-green-600">09:00 - 07:55</p>
                               </div>
                             </div>
                             <div class="h-32 lg:h-28 p-0.5 md:p-3.5   border-t border-r border-gray-200 transition-all hover:bg-stone-100"></div>
                             <div class="h-32 lg:h-28 p-0.5 md:p-3.5   border-t  border-gray-200 transition-all hover:bg-stone-100"></div>
                     
                             <div class="h-32 lg:h-28 p-0.5 md:p-3.5   border-t border-r border-gray-200 flex items-end transition-all hover:bg-stone-100">
-                              <span class="text-xs font-semibold text-gray-400">08:00 am</span>
+                              <span class="text-xs font-semibold text-gray-400">12:00 am</span>
                             </div>
                             <div class="h-32 lg:h-28 p-0.5 md:p-3.5   border-t border-r border-gray-200 transition-all hover:bg-stone-100"></div>
                             <div class="h-32 lg:h-28 p-0.5 md:p-3.5   border-t border-r border-gray-200 transition-all hover:bg-stone-100"></div>
@@ -89,7 +90,7 @@
                             <div class="h-32 lg:h-28 p-0.5 md:p-3.5   border-t border-r border-gray-200 flex items-end transition-all hover:bg-stone-100">
                               <div class="rounded p-1.5 border-l-2 border-blue-600 bg-blue-50">
                                 <p class="text-xs font-normal text-gray-900 mb-px">Project Task Review</p>
-                                <p class="text-xs font-semibold text-blue-600">08:00 - 08:25</p>
+                                <p class="text-xs font-semibold text-blue-600">15:00 - 08:25</p>
                               </div>
                             </div>
                             <div class="h-32 lg:h-28 p-0.5 md:p-3.5   border-t border-gray-200 transition-all hover:bg-stone-100"></div>
@@ -101,7 +102,7 @@
                             <div class="h-32 lg:h-28 p-0.5 md:p-3.5   border-t border-r border-gray-200 transition-all hover:bg-stone-100">
                               <div class="rounded p-1.5 border-l-2 border-yellow-600 bg-yellow-50">
                                 <p class="text-xs font-normal text-gray-900 mb-px">Breakfast with Dhruv Patel</p>
-                                <p class="text-xs font-semibold text-yellow-600">08:00 - 09:00</p>
+                                <p class="text-xs font-semibold text-yellow-600">18:00 - 09:00</p>
                               </div>
                             </div>
                             <div class="h-32 lg:h-28 p-0.5 md:p-3.5   border-t border-r border-gray-200 transition-all hover:bg-stone-100"></div>
@@ -110,13 +111,13 @@
                             <div class="h-32 lg:h-28 p-0.5 md:p-3.5   border-t border-gray-200 transition-all hover:bg-stone-100"></div>
                     
                             <div class="h-32 lg:h-28 p-0.5 md:p-3.5   border-t border-r border-gray-200 flex items-end transition-all hover:bg-stone-100">
-                              <span class="text-xs font-semibold text-gray-400">10:00 am</span>
+                              <span class="text-xs font-semibold text-gray-400">21:00 am</span>
                             </div>
                             <div class="h-32 lg:h-28 p-0.5 md:p-3.5   border-t border-r border-gray-200 transition-all hover:bg-stone-100"></div>
                             <div class="h-32 lg:h-28 p-0.5 md:p-3.5   border-t border-r border-gray-200 transition-all hover:bg-stone-100">
                               <div class="rounded p-1.5 border-l-2 border-green-600 bg-green-50">
                                 <p class="text-xs font-normal text-gray-900 mb-px">Dancing Zumba class</p>
-                                <p class="text-xs font-semibold text-green-600">09:30 - 10:00</p>
+                                <p class="text-xs font-semibold text-green-600">00:00 - 10:00</p>
                               </div>
                             </div>
                             <div class="h-32 lg:h-28 p-0.5 md:p-3.5   border-t border-r border-gray-200 transition-all hover:bg-stone-100"></div>

@@ -104,7 +104,7 @@ Route::get('/dosenPengajuanIRS', [MahasiswaController::class, 'index1'])->name('
 Route::get('/dosenPengajuanIRS/urutkan', [MahasiswaController::class, 'urutkan1'])->name('mahasiswa.urutkan1');
 Route::get('dosenPengajuanIRS/cari',[MahasiswaController::class,'cari1'])->name('mahasiswa.cari1');
 Route::get('/kpBuatJadwal',[JadwalKuliahController::class,'buatJadwalkuliah'])->name('buatJadwalkuliah');
-
+// Route::get('/kpBuatJadwal',[JadwalKuliahController::class,'matkulJadwalkuliah'])->name('matkulJadwalkuliah');
 
 Route::get('/buatIRSMhs', function () {
     return view('buatIRSMhs');
@@ -167,6 +167,9 @@ Route::get('/kpKelolaMatkul', function(){
     return view('kpKelolaMatkul');
 });
 
+Route::delete('/jadwalkuliah/{id}', [JadwalKuliahController::class, 'destroy'])->name('jadwalkuliah.destroy');
+
+Route::delete('jadwalkuliah/{id}', [JadwalKuliahController::class, 'destroy'])->name('jadwalkuliah.destroy');
 
 Route::resource('jadwalkuliah', JadwalKuliahController::class);
 

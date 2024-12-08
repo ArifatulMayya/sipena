@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Daftar Mahasiswa - SIPENA UNDIP </title>
   @vite('resources/css/app.css')
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
 </head>
 <body class="bg-[#AEC0F1] h-screen font-sans">
@@ -26,13 +27,14 @@
                         <tr>
                             <th class="w-[10%] py-3">Kode MK</th>
                             <th class="w-[20%] py-3">Nama MK</th>
-                            <th class="w-[10%] py-3">Kelas</th>
-                            <th class="w-[15%] py-3">Nama Ruang</th>
+                            <th class="w-[5%] py-3">Kelas</th>
+                            <th class="w-[10%] py-3">Nama Ruang</th>
                             <th class="w-[5%] py-3">SKS</th>
                             <th class="w-[10%] py-3">Hari</th>
                             <th class="w-[10%] py-3">Waktu Mulai</th>
                             <th class="w-[10%] py-3">Waktu Selesai</th>
-                            <th class="w-[10%] py-3">Kuota</th>
+                            <th class="w-[5%] py-3">Kuota</th>
+                            <th class="w-[10%] py-3">Tindakan</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -47,6 +49,16 @@
                                 <td class="py-2">{{ $jadwal->wkt_mulai}} </td>
                                 <td class="py-2">{{ $jadwal->wkt_selesai}} </td>
                                 <td class="py-2">{{ $jadwal->kuota}} </td>
+                                <td class="py-3">
+                                    <!-- Button untuk Edit -->
+
+                                    <!-- Button untuk Hapus -->
+                                    <form action="{{ route('jadwalkuliah.destroy', $jadwal->id) }}" method="POST" class="inline-block">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="px-4 py-2 bg-red-600 text-white rounded-lg">Hapus</button>
+                                    </form>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>
@@ -66,8 +78,11 @@
                     <div class="mb-4">
                         <label for="kode_mk" class="block text-sm font-medium text-gray-700">Kode Mata Kuliah</label>
                         <select id="kode_mk" name="kode_mk" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md" required>
-                            <option value="" disabled selected>Pilih Kode Mata Kuliah</option>
-                            <!-- Options akan diisi melalui JavaScript -->
+                            <option value="" disabled selected>Pilih Kode</option>
+                                @foreach ($matkuls as $mk)
+                                        <option value="{{ $mk->kode_mk }}" data-nama="{{ $mk->nama_mk }}">{{ $mk->kode_mk }}</option>
+                                @endforeach
+                            </select>
                         </select>
                     </div>
                     <div class="mb-4">
@@ -137,6 +152,12 @@
                     <button type="button" id="closeModal" class="bg-gray-400 text-white px-4 py-2 rounded-lg">Batal</button>
                     <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg">Simpan</button>
                 </div>
+
+                <form action="{{ route('jadwalkuliah.destroy', $jadwal->id) }}" method="POST" class="inline-block">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="px-4 py-2 bg-red-600 text-white rounded-lg">Hapus</button>
+                </form>
             </form>
             
         </div>
@@ -174,53 +195,88 @@
 </div>
 
 <script>
-    // Data mata kuliah sesuai dengan seeder
-    const mataKuliahData = [
-        { kode_mk: 'PAIK6102', nama_mk: 'Dasar Pemrograman' },
-        { kode_mk: 'PAIK6105', nama_mk: 'Struktur Diskrit' },
-        { kode_mk: 'PAIK6104', nama_mk: 'Logika Informatika' },
-        { kode_mk: 'PAIK6101', nama_mk: 'Matematika I' },
-        { kode_mk: 'PAIK6103', nama_mk: 'Dasar Sistem' },
-        { kode_mk: 'UUW00007', nama_mk: 'Bahasa Inggris' },
-        { kode_mk: 'UUW00005', nama_mk: 'Olahraga' },
-        { kode_mk: 'UUW00003', nama_mk: 'Pancasila dan Kewarganegaraan' },
-        { kode_mk: 'UUW00004', nama_mk: 'Bahasa Indonesia' },
-        { kode_mk: 'UUW00011', nama_mk: 'Pendidikan Agama' },
-        { kode_mk: 'PAIK6202', nama_mk: 'Algoritma dan Pemrograman' },
-        { kode_mk: 'PAIK6204', nama_mk: 'Aljabar Linear' },
-        { kode_mk: 'PAIK6203', nama_mk: 'Organisasi dan Arsitektur Komputer' },
-        { kode_mk: 'PAIK6201', nama_mk: 'Matematika II' },
-        { kode_mk: 'UUW00006', nama_mk: 'Internet of Things (IoT)' },
-        { kode_mk: 'PAIK6301', nama_mk: 'Struktur Data' },
-        { kode_mk: 'PAIK6304', nama_mk: 'Metode Numerik' },
-        { kode_mk: 'PAIK6302', nama_mk: 'Sistem Operasi' },
-        { kode_mk: 'PAIK6305', nama_mk: 'Interaksi Manusia dan Komputer' },
-        { kode_mk: 'PAIK6303', nama_mk: 'Basis Data' },
-        { kode_mk: 'PAIK6306', nama_mk: 'Statistika' },
-        // Tambahkan mata kuliah lain sesuai dengan seeder Anda
-    ];
-
-    // Mengisi dropdown kode mata kuliah
-    const kodeMkSelect = document.getElementById('kode_mk');
-    mataKuliahData.forEach(mk => {
-        const option = document.createElement('option');
-        option.value = mk.kode_mk;
-        option.textContent = mk.kode_mk;
-        kodeMkSelect.appendChild(option);
-    });
-
-    // Mengisi nama mata kuliah secara otomatis saat kode dipilih
-    kodeMkSelect.addEventListener('change', function () {
-        const selectedKode = this.value;
-        const selectedMk = mataKuliahData.find(mk => mk.kode_mk === selectedKode);
-        if (selectedMk) {
-            document.getElementById('nama_mk').value = selectedMk.nama_mk;
-        } else {
-            document.getElementById('nama_mk').value = ''; // Kosongkan jika tidak ditemukan
-        }
-    });
+document.getElementById('kode_mk').addEventListener('change', function() {
+    var selectedOption = this.options[this.selectedIndex];
+    var namaMk = selectedOption.getAttribute('data-nama');  // Ambil nama mata kuliah
+    document.getElementById('nama_mk').value = namaMk;  // Isi input nama mata kuliah
+});
 </script>
+
+@if (session('success'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Berhasil!',
+            text: '{{ session('success') }}',
+            showConfirmButton: true,
+            timer: 3000
+        });
+    </script>
+@endif  
+
+@if (session('error'))
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Gagal!',
+            text: '{{ session('error') }}',
+            showConfirmButton: true,
+            timer: 3000
+        });
+    </script>
+@endif  
+
+@section('content')
+    <!-- Form input ruang dan prodi -->
+    <form method="POST" action="{{ route('ruang.store') }}">
+        @csrf
+        <label for="no_ruang">No Ruang:</label>
+        <input type="text" name="no_ruang" id="no_ruang">
         
+        <label for="prodi">Prodi:</label>
+        <input type="text" name="prodi" id="prodi">
+        
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Display alert messages -->
+    @if(session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
+
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const ruangInput = document.getElementById('no_ruang'); // ID input ruang
+            const prodiInput = document.getElementById('prodi'); // ID input prodi
+            const existingData = @json($ruang); // Mengambil data ruang yang ada dari controller
+            
+            ruangInput.addEventListener('blur', function () {
+                const noRuang = ruangInput.value;
+                const prodi = prodiInput.value;
+
+                // Cek apakah no_ruang dan prodi sudah ada dalam database
+                const existingRoom = existingData.find(room => room.no_ruang === noRuang && room.prodi === prodi);
+                
+                if (existingRoom) {
+                    alert('Ruang dan Prodi ini sudah ada!');
+                    // Reset atau mencegah pengiriman form
+                    ruangInput.value = ''; // Clear input ruang
+                    prodiInput.value = ''; // Clear input prodi
+                }
+            });
+        });
+    </script>
+    
+@endsection
         
         
         

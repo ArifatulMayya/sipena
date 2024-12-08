@@ -12,7 +12,7 @@
     <x-navbar></x-navbar>
     <div class="flex pt-12">
         <x-side-bar-ba></x-side-bar-ba>
-        <div class="ml-[17%] bg-[#AEC0F1] w-screen">
+        <div class="ml-[17%] bg-[#AEC0F1]  w-screen">
             <div class="my-16 ml-9">
                 <h1 class="text-3xl font-semibold">Buat Ruang</h1>
             </div>
@@ -22,13 +22,16 @@
             </div>
 
             <div class="mx-12 mt-6">
-                <table class="w-full text-center font bg-white rounded-2xl">
+                <table class="w-full text-center bg-white rounded-2xl">
                     <thead class=" border-b-2">
                         <tr>
                             <th class="w-[20%] py-3">No Ruang</th>
                             <th class="w-[5%] py-3">Blok Gedung</th>
                             <th class="w-[15%] py-3">Lantai</th>
                             <th class="w-[15%] py-3">Prodi</th>
+                            <div class="mb-4">
+                            </div>
+                            
                             <th class="w-[10%] py-3">Kapasitas</th>
                             <th class="w-[20%] py-3">Keperluan</th>
                             <th class="w-[15%] py-3">Tindakan</th>
@@ -48,7 +51,7 @@
                                 <form action="{{ route('ruang.destroy', $ruang->id) }}" method="POST" class="inline-block">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="px-4 py-2 bg-red-600 text-white rounded-lg font-semibold">Hapus</button>
+                                    <button type="submit" class="px-4 py-2 font-semibold bg-red-600 text-white rounded-lg">Hapus</button>
                                 </form>
                             </td>
                         </tr>
@@ -60,49 +63,55 @@
     </div>
 
     <!-- Modal for Adding Ruang -->
-    <div id="modal" class="fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center hidden">
-        <div class="bg-white w-96 p-6 rounded-lg shadow-lg">
-            <h2 class="text-2xl font-semibold mb-4">Tambah Ruang</h2>
-            <form action="{{ route('ruang.store') }}" method="POST">
-                @csrf
-                <!-- Input Fields -->
-                <div class="mb-4">
-                    <label for="no_ruang" class="block text-sm font-medium text-gray-700">No Ruang</label>
-                    <input type="text" id="no_ruang" name="no_ruang" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md" required>
-                </div>
-            
-                <div class="mb-4">
-                    <label for="blok_gedung" class="block text-sm font-medium text-gray-700">Blok Gedung</label>
-                    <input type="text" id="blok_gedung" name="blok_gedung" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md" required>
-                </div>
-            
-                <div class="mb-4">
-                    <label for="lantai" class="block text-sm font-medium text-gray-700">Lantai</label>
-                    <input type="number" id="lantai" name="lantai" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md" required>
-                </div>
+<div id="modal" class="fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center hidden">
+    <div class="bg-white w-96 p-6 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-semibold mb-4">Tambah Ruang</h2>
+        <form action="{{ route('ruang.store') }}" method="POST">
+            @csrf
+            <!-- Input Fields -->
+            <div class="mb-4">
+                <label for="no_ruang" class="block text-sm font-medium text-gray-700">No Ruang</label>
+                <input type="text" id="no_ruang" name="no_ruang" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md" required>
+            </div>
 
-                <div class="mb-4">
-                    <label for="prodi" class="block text-sm font-medium text-gray-700">Prodi</label>
-                    <input type="text" id="prodi" name="prodi" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md" required>
-                </div>
-            
-                <div class="mb-4">
-                    <label for="kapasitas" class="block text-sm font-medium text-gray-700">Kapasitas</label>
-                    <input type="number" id="kapasitas" name="kapasitas" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md" required>
-                </div>
-            
-                <div class="mb-4">
-                    <label for="keperluan" class="block text-sm font-medium text-gray-700">Keperluan</label>
-                    <input type="text" id="keperluan" name="keperluan" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md" required>
-                </div>
-            
-                <div class="flex justify-end space-x-4">
-                    <button type="button" id="closeModal" class="bg-gray-400 text-white px-4 py-2 rounded-lg">Batal</button>
-                    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg">Simpan</button>
-                    
-                </div>
+            <div class="mb-4">
+                <label for="blok_gedung" class="block text-sm font-medium text-gray-700">Blok Gedung</label>
+                <input type="text" id="blok_gedung" name="blok_gedung" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md" required>
+            </div>
 
+            <div class="mb-4">
+                <label for="lantai" class="block text-sm font-medium text-gray-700">Lantai</label>
+                <input type="number" id="lantai" name="lantai" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md" required>
+            </div>
 
+            <!-- Prodi Dropdown -->
+            <div class="mb-4">
+                <label for="prodi" class="block text-sm font-medium text-gray-700">Prodi</label>
+                <select id="prodi" name="prodi" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md" required>
+                    <option value="Informatika">Informatika</option>
+                    <option value="Matematika">Matematika</option>
+                    <option value="Statistika">Statistika</option>
+                    <option value="Fisika">Fisika</option>
+                    <option value="Kimia Biologi">Kimia</option>
+                    <option value="Kimia Biologi">Biologi</option>
+                    <option value="Bioteknologi">Bioteknologi</option>
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label for="kapasitas" class="block text-sm font-medium text-gray-700">Kapasitas</label>
+                <input type="number" id="kapasitas" name="kapasitas" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md" required>
+            </div>
+
+            <div class="mb-4">
+                <label for="keperluan" class="block text-sm font-medium text-gray-700">Keperluan</label>
+                <input type="text" id="keperluan" name="keperluan" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md" required>
+            </div>
+
+            <div class="flex justify-end space-x-4">
+                <button type="button" id="closeModal" class="bg-gray-400 text-white px-4 py-2 rounded-lg">Batal</button>
+                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg">Simpan</button>
+            </div>
             </form>
             
         </div>
@@ -208,4 +217,7 @@
             });
         });
     </script>
+    
 @endsection
+
+ 
