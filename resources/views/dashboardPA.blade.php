@@ -45,11 +45,11 @@
                 <div class="flex justify-between ml-4 mt-6 bg-[#10296E] p-6 rounded-2xl">
                     <div class="text-center">
                         <p class="text-lg font-semibold">Pengajuan IRS</p>
-                        <p class="text-2xl font-bold">38</p>
+                        <p class="text-2xl font-bold"> {{ $jumlahPengajuan }}</p>
                     </div>
                     <div class="text-center">
                         <p class="text-lg font-semibold">IRS Disetujui</p>
-                        <p class="text-2xl font-bold">9</p>
+                        <p class="text-2xl font-bold">{{ $irsDisetujui }}</p>
                     </div>
                     <div class="text-center">
                         <p class="text-lg font-semibold">IRS Ditolak</p>

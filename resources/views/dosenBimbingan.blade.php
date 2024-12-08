@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +8,7 @@
   @vite('resources/css/app.css')
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
 </head>
-<body class="bg-[#AEC0F1] h-screen font-sans">
+<body class="bg-[#AEC0F1] w-screen font-sans">
 
   <x-navbar></x-navbar>
 <div class="flex pt-12"> 
@@ -52,7 +53,7 @@
           <td class="p-2">{{ $mhs->nama }}</td>
           <td class="p-2 text-center">{{ $mhs->semester }}</td>
           <td class="p-2 text-center">
-            <a href="/studi" class="px-4 py-2 bg-orange-500 hover:bg-orange-700 text-white rounded-lg">Detail</a>
+            <a href="{{ route('studi',['nim'=>$mhs->nim,'nama'=>$mhs->nama]) }}" class="px-4 py-2 bg-orange-500 hover:bg-orange-700 text-white rounded-lg">Detail</a>
           </td>
         </tr>
         @empty
@@ -61,9 +62,22 @@
         @endforelse
       </tbody>
     </table>
-    <div class="mt-4">
-      {{ $mahasiswa->appends(['sort' => $sort])->links('pagination::tailwind') }}
-  </div>
+    <div class="w-full mt-4 flex justify-between items-center ">
+      @if ($mahasiswa->onFirstPage())
+      <button class="px-4 py-2 bg-gray-400 text-white rounded-lg cursor-not-allowed" disabled>Previous</button>
+    @else
+      <a href="{{ $mahasiswa->previousPageUrl() }}" class="px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded-lg">Previous</a>
+    @endif
+  
+    <!-- Next Button -->
+    @if ($mahasiswa->hasMorePages())
+      <a href="{{ $mahasiswa->nextPageUrl() }}" class="px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded-lg ml-4">Next</a>
+    @else
+      <button class="px-4 py-2 bg-gray-400 text-white rounded-lg ml-4 cursor-not-allowed" disabled>Next</button>
+    @endif
+    </div>
+    
+  
   
   </div>
 </div>

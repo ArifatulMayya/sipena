@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Irs;
 use App\Models\Mahasiswa;
 use Illuminate\Http\Request;
 
@@ -8,6 +10,7 @@ class MahasiswaController extends Controller
 {
     //untuk page dosen bimbingan
     public function index(){
+        
         $mahasiswa=Mahasiswa::paginate(8);
         $sort=null;
         return view('dosenBimbingan',compact('mahasiswa','sort'));
@@ -57,6 +60,26 @@ class MahasiswaController extends Controller
 
         $mahasiswa->appends(['search'=>$search,'sort']);
         return view('dosenPengajuanIRS',compact('mahasiswa','sort','search')); 
+    }
+
+    public function pengajuanIrs(){
+        // Menghitung jumlah pengajuan IRS
+        $jumlahPengajuan = Mahasiswa::count();
+        $irsDisetujui = Irs::where('status', 'Disetujui')->count();
+        
+        // Kirim variabel jumlahPengajuan ke view dashboardPA
+        return view('dashboardPA', compact('jumlahPengajuan','irsDisetujui'));  
+    }
+    
+    public function printIrs($id) {
+        $mahasiswa = Mahasiswa::find($id);
+        return view('print-irs', compact('mahasiswa'));
+    }
+    
+    public function perkembanganstudi(Request $request){
+        $nim=$request->query('nim');
+        $nama=$request->query('nama');
+        return view('studi',compact('nim','nama'));
     }
     
 }

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Irs extends Model
 {
@@ -12,7 +13,7 @@ class Irs extends Model
 
     protected $fillable = [
        'nim',
-       'isemester',
+       'semester',
        'tahun_ajaran',
        'status',
     ];

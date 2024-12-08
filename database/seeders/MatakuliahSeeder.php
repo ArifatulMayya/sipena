@@ -41,7 +41,7 @@ class MatakuliahSeeder extends Seeder
             ['kode_mk' => 'PAIK6403', 'nama_mk' => 'Manajemen Basis Data', 'sks' => 3, 'sifat' => 'Wajib', 'smt' => 4],
             ['kode_mk' => 'PAIK6406', 'nama_mk' => 'Sistem Cerdas', 'sks' => 3, 'sifat' => 'Wajib', 'smt' => 4],
             ['kode_mk' => 'PAIK6503', 'nama_mk' => 'Sistem Informasi', 'sks' => 3, 'sifat' => 'Wajib','smt' => 5],
-            ['kode_mk' => 'UNW00007', 'nama_mk' => 'Kewirausahaan', 'sks' => 2, 'sifat' => 'Wajib', 'smt' => 5],
+            ['kode_mk' => 'UUW00008', 'nama_mk' => 'Kewirausahaan', 'sks' => 2, 'sifat' => 'Wajib', 'smt' => 5],
             ['kode_mk' => 'PAIK6504', 'nama_mk' => 'Proyek Perangkat Lunak', 'sks' => 3, 'sifat' => 'Wajib', 'smt' => 5],
             ['kode_mk' => 'PAIK6506', 'nama_mk' => 'Keamanan dan Jaminan Informasi', 'sks' => 3, 'sifat' => 'Wajib', 'smt' => 5],
             ['kode_mk' => 'PAIK6501', 'nama_mk' => 'Pengembangan Berbasis Platform', 'sks' => 4, 'sifat' => 'Wajib', 'smt' => 5],
@@ -52,6 +52,9 @@ class MatakuliahSeeder extends Seeder
             ['kode_mk' => 'PAIK6605', 'nama_mk' => 'Manajemen Proyek', 'sks' => 3,'sifat' => 'Wajib', 'smt' => 6],
             ['kode_mk' => 'PAIK6601', 'nama_mk' => 'Analisis dan Strategi Algoritma', 'sks' => 2, 'sifat' => 'Wajib', 'smt' => 6],
             ['kode_mk' => 'PAIK6602', 'nama_mk' => 'Uji Perangkat Lunak', 'sks' => 3, 'sifat' => 'Wajib', 'smt' => 6],
+            ['kode_mk' => 'PAIK6801', 'nama_mk' => 'Topik Khusus RPL STI', 'sks' => 3, 'sifat' => 'Pilihan', 'smt' => 6],
+            ['kode_mk' => 'PAIK6802', 'nama_mk' => 'Topik Khusus SC KV', 'sks' => 3, 'sifat' => 'Pilihan', 'smt' => 6],
+            ['kode_mk' => 'PAIK6818', 'nama_mk' => 'Pengolahan Bahasa Alami', 'sks' => 3, 'sifat' => 'Pilihan', 'smt' => 6]
         ];
 
         // Insert data into mata_kuliah table

@@ -6,6 +6,8 @@
   <title>Daftar Pengajuan IRS - SIPENA UNDIP</title>
   @vite('resources/css/app.css')
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 <body class="bg-[#AEC0F1] h-screen font-sans">
 
@@ -36,7 +38,7 @@
               class="ml-20 px-4 py-2 bg-blue-900 hover:bg-blue-950 text-white rounded-lg">
               Urutkan {{ $sort === 'asc' ? 'NIM' : 'NIM' }}
             </a>
-            <button class="ml-4 px-4 py-2 bg-green-500 hover:bg-green-700 text-white rounded-lg">
+            <button class="ml-4 px-4 py-2 bg-green-500 hover:bg-green-700 text-white rounded-lg setuju-all">
               Setujui Semua
             </button>
           </div>
@@ -114,8 +116,22 @@
                 </tbody>
               </table>
               <div class="flex justify-end mt-4">
-                <button class="bg-green-500 text-white p-2 rounded mr-2 hover:bg-green-700">Setuju</button>
-                <button class="bg-red-500 text-white p-2 rounded hover:bg-red-700">Tolak</button>
+                <!-- Tombol Setuju -->
+                <button class="bg-green-500 text-white p-2 rounded mr-2 hover:bg-green-700 setuju-button"
+                        data-id="{{ $loop->iteration }}" data-nim="{{ $mhs->nim }}" data-semester={{ $mhs->semester }}>
+                  Setuju
+                </button>
+                <!-- Tombol Tolak -->
+                <button class="bg-red-500 text-white p-2 rounded hover:bg-red-700 tolak-button"
+                        data-id="{{ $loop->iteration }}">
+                  Tolak
+                </button>
+          
+                <!-- Tombol Print IRS, disembunyikan terlebih dahulu -->
+                <button class="bg-blue-500 text-white p-2 rounded mt-2 hidden print-irs-button" 
+                        id="print-irs-{{ $loop->iteration }}">
+                  Print IRS
+                </button>
               </div>
             </td>
           </tr>
@@ -128,8 +144,19 @@
       </table>
 
       <!-- Pagination -->
-      <div class="mt-4">
-        {{ $mahasiswa->appends(['sort' => $sort])->links('pagination::tailwind') }}
+      <div class="w-full mt-4 flex justify-between items-center">
+        @if ($mahasiswa->onFirstPage())
+        <button class="px-4 py-2 bg-gray-400 text-white rounded-lg cursor-not-allowed" disabled>Previous</button>
+      @else
+        <a href="{{ $mahasiswa->previousPageUrl() }}" class="px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded-lg">Previous</a>
+      @endif
+    
+      <!-- Next Button -->
+      @if ($mahasiswa->hasMorePages())
+        <a href="{{ $mahasiswa->nextPageUrl() }}" class="px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded-lg ml-4">Next</a>
+      @else
+        <button class="px-4 py-2 bg-gray-400 text-white rounded-lg ml-4 cursor-not-allowed" disabled>Next</button>
+      @endif
       </div>
     </div>
   </div>
@@ -148,6 +175,83 @@
         });
     });
   </script>
+ <script>
+  document.querySelectorAll('.setuju-button').forEach(button => {
+    button.addEventListener('click', () => {
+        const nim = button.getAttribute('data-nim');
+        const semester = button.getAttribute('data-semester');
+        const tahunAjaran = "2024/2025 Genap";
+        const status = "Disetujui";
+
+        fetch("{{ route('irs.store') }}", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "X-CSRF-TOKEN": "{{ csrf_token() }}",
+            },
+            body: JSON.stringify({
+                nim: nim,
+                semester: semester,
+                tahun_ajaran: tahunAjaran,
+                status: status,
+            }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                Swal.fire({
+                    title: "Berhasil",
+                    text: data.message,
+                    icon: "success"
+                });
+            } else {
+                Swal.fire({
+                    title: "Gagal",
+                    text: "Terjadi kesalahan",
+                    icon: "error"
+                });
+            }
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            Swal.fire({
+                title: "Gagal",
+                text: "Terjadi kesalahan pada server",
+                icon: "error"
+            });
+        });
+    });
+});
+
+</script>
+
+<script>
+  // Menambahkan event listener pada semua tombol dengan kelas 'setuju-button'
+  document.querySelectorAll('.tolak-button').forEach(button => {
+      button.addEventListener('click', () => {
+          // Menampilkan SweetAlert
+          Swal.fire({
+              title: "Berhasil Ditolak!", 
+              text: "Pengajuan IRS berhasil ditolak", 
+              icon: "check" // Gunakan 'success' untuk ikon checklist
+          });
+      });
+  });
+</script>
+<script>
+  // Menambahkan event listener pada semua tombol dengan kelas 'setuju-button'
+  document.querySelectorAll('.setuju-all').forEach(button => {
+      button.addEventListener('click', () => {
+          // Menampilkan SweetAlert
+          Swal.fire({
+              title: "Berhasil", 
+              text: "Semua IRS berhasil disimpan", 
+              icon: "success" // Gunakan 'success' untuk ikon checklist
+          });
+      });
+  });
+</script>
+
 
 </body>
 </html>

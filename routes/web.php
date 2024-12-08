@@ -9,6 +9,9 @@ use App\Http\Controllers\JadwalKuliahController;
 use App\Http\Controllers\MatkulController;
 use App\Http\Controllers\IRSController;
 
+
+
+
 Route::get('/login', [LoginController::class,'store']);
 
 Route::middleware('guest')->group(function () {
@@ -18,7 +21,7 @@ Route::middleware('guest')->group(function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('logout', [LoginController::class, 'destroy'])->name('logout');
-    Route::get('dashboardpa', [DashboardController::class, 'indexpa'])->name('dashboardpa');
+    Route::get('dashboardPA', [DashboardController::class, 'indexpa'])->name('dashboardPA');
     Route::get('dashboardmhs', [DashboardController::class, 'indexmhs'])->name('dashboardmhs');
     Route::get('dashboardba', [DashboardController::class, 'indexmhs'])->name('dashboardba');
     Route::get('dashboarddekan', [DashboardController::class, 'indexdekan'])->name('dashboarddekan');
@@ -87,17 +90,15 @@ Route::get('/', function () {
     return view('login');
 });
 
-Route::get('/dashboardPA', function () {
-    return view('dashboardPA');
-});
+Route::get('/dashboardPA', [MahasiswaController::class, 'pengajuanIrs'])->name('pengajuanIrs');
+
 Route::get('/dosenBimbingan', [MahasiswaController::class, 'index'])->name('mahasiswa.index');
 Route::get('/dosenBimbingan/urutkan', [MahasiswaController::class, 'urutkan'])->name('mahasiswa.urutkan');
 Route::get('dosenBimbingan/cari',[MahasiswaController::class,'cari'])->name('mahasiswa.cari');
+Route::post('/dosenPengajuanIRS/approve-all', [JadwalKuliahController::class, 'approveAll'])->name('jadwal.approveAll');
 
 
-Route::get('/studi', function () {
-    return view('studi');
-});
+Route::get('/studi',[MahasiswaController::class,'perkembanganstudi'])->name('studi');
 
 // Route::get('/dosenPengajuanIRS', function () {
 //     return view('dosenPengajuanIRS');
@@ -105,6 +106,8 @@ Route::get('/studi', function () {
 Route::get('/dosenPengajuanIRS', [MahasiswaController::class, 'index1'])->name('mahasiswa.index1');
 Route::get('/dosenPengajuanIRS/urutkan', [MahasiswaController::class, 'urutkan1'])->name('mahasiswa.urutkan1');
 Route::get('dosenPengajuanIRS/cari',[MahasiswaController::class,'cari1'])->name('mahasiswa.cari1');
+Route::post('/irs/setuju', [IRSController::class, 'store'])->name('irs.store');
+
 Route::get('/kpBuatJadwal',[JadwalKuliahController::class,'buatJadwalkuliah'])->name('buatJadwalkuliah');
 // Route::get('/kpBuatJadwal',[JadwalKuliahController::class,'matkulJadwalkuliah'])->name('matkulJadwalkuliah');
 
