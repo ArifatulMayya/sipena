@@ -231,9 +231,9 @@
       button.addEventListener('click', () => {
           // Menampilkan SweetAlert
           Swal.fire({
-              title: "Ditolak!", 
-              text: "Pengajuan IRS ditolak", 
-              icon: "error" // Gunakan 'success' untuk ikon checklist
+              title: "Berhasil Ditolak!", 
+              text: "Pengajuan IRS berhasil ditolak", 
+              icon: "check" // Gunakan 'success' untuk ikon checklist
           });
       });
   });
