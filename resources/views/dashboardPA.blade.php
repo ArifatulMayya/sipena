@@ -49,7 +49,7 @@
                     </div>
                     <div class="text-center">
                         <p class="text-lg font-semibold">IRS Disetujui</p>
-                        <p class="text-2xl font-bold">9</p>
+                        <p class="text-2xl font-bold">{{ $irsDisetujui }}</p>
                     </div>
                     <div class="text-center">
                         <p class="text-lg font-semibold">IRS Ditolak</p>
