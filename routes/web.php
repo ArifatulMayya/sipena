@@ -7,6 +7,10 @@ use App\Http\Controllers\RuangController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\JadwalKuliahController;
 use App\Http\Controllers\MatkulController;
+use App\Http\Controllers\IRSController;
+
+
+
 
 Route::get('/login', [LoginController::class,'store']);
 
@@ -101,6 +105,8 @@ Route::get('/studi',[MahasiswaController::class,'perkembanganstudi'])->name('stu
 Route::get('/dosenPengajuanIRS', [MahasiswaController::class, 'index1'])->name('mahasiswa.index1');
 Route::get('/dosenPengajuanIRS/urutkan', [MahasiswaController::class, 'urutkan1'])->name('mahasiswa.urutkan1');
 Route::get('dosenPengajuanIRS/cari',[MahasiswaController::class,'cari1'])->name('mahasiswa.cari1');
+Route::post('/irs/setuju', [IRSController::class, 'store'])->name('irs.store');
+
 Route::get('/kpBuatJadwal',[JadwalKuliahController::class,'buatJadwalkuliah'])->name('buatJadwalkuliah');
 // Route::get('/kpBuatJadwal',[JadwalKuliahController::class,'matkulJadwalkuliah'])->name('matkulJadwalkuliah');
 

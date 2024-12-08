@@ -15,6 +15,7 @@ return new class extends Migration
         Schema::create('irs', function (Blueprint $table) {
             $table->id();
             $table->string('nim');
+            $table->integer('semester');
             $table->string('tahun_ajaran');
             $table->string('status');
             $table->timestamps();
