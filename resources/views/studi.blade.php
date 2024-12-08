@@ -22,7 +22,6 @@
                         <tr>
                             <th class="p-2">Sem.</th>
                             <th class="p-2">Tahun Ajaran</th>
-                            <th class="p-2">Kelas</th>
                             <th class="p-2">Jumlah SKS</th>
                             <th class="p-2">IP Semester</th>
                         </tr>
@@ -31,21 +30,18 @@
                         <tr>
                             <td class="p-2 text-center">1</td>
                             <td class="p-2 text-center">2022/2023 Ganjil</td>
-                            <td class="p-2 text-center">D</td>
                             <td class="p-2 text-center">21</td>
                             <td class="p-2 text-center">4.0</td>
                         </tr>
                         <tr>
                             <td class="p-2 text-center">2</td>
                             <td class="p-2 text-center">2022/2023 Genap</td>
-                            <td class="p-2 text-center">C</td>
                             <td class="p-2 text-center">24</td>
                             <td class="p-2 text-center">3.8</td>
                         </tr>
                         <tr>
                             <td class="p-2 text-center">3</td>
                             <td class="p-2 text-center">2023/2024 Ganjil</td>
-                            <td class="p-2 text-center">C</td>
                             <td class="p-2 text-center">21</td>
                             <td class="p-2 text-center">3.6</td>
                         </tr>

@@ -8,6 +8,7 @@ class MahasiswaController extends Controller
 {
     //untuk page dosen bimbingan
     public function index(){
+        
         $mahasiswa=Mahasiswa::paginate(8);
         $sort=null;
         return view('dosenBimbingan',compact('mahasiswa','sort'));
@@ -58,5 +59,14 @@ class MahasiswaController extends Controller
         $mahasiswa->appends(['search'=>$search,'sort']);
         return view('dosenPengajuanIRS',compact('mahasiswa','sort','search')); 
     }
+
+    public function pengajuanIrs(){
+        // Menghitung jumlah pengajuan IRS
+        $jumlahPengajuan = Mahasiswa::count();
+        
+        // Kirim variabel jumlahPengajuan ke view dashboardPA
+        return view('dashboardPA', compact('jumlahPengajuan'));  
+    }
+    
     
 }
