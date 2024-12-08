@@ -233,7 +233,7 @@
           Swal.fire({
               title: "Berhasil Ditolak!", 
               text: "Pengajuan IRS berhasil ditolak", 
-              icon: "check" // Gunakan 'success' untuk ikon checklist
+              icon: "success" // Gunakan 'success' untuk ikon checklist
           });
       });
   });
