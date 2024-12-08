@@ -90,11 +90,10 @@ Route::get('/dashboardPA', [MahasiswaController::class, 'pengajuanIrs'])->name('
 Route::get('/dosenBimbingan', [MahasiswaController::class, 'index'])->name('mahasiswa.index');
 Route::get('/dosenBimbingan/urutkan', [MahasiswaController::class, 'urutkan'])->name('mahasiswa.urutkan');
 Route::get('dosenBimbingan/cari',[MahasiswaController::class,'cari'])->name('mahasiswa.cari');
+Route::post('/dosenPengajuanIRS/approve-all', [JadwalKuliahController::class, 'approveAll'])->name('jadwal.approveAll');
 
 
-Route::get('/studi', function () {
-    return view('studi');
-});
+Route::get('/studi',[MahasiswaController::class,'perkembanganstudi'])->name('studi');
 
 // Route::get('/dosenPengajuanIRS', function () {
 //     return view('dosenPengajuanIRS');
