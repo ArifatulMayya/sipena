@@ -23,7 +23,7 @@ Route::middleware('auth')->group(function () {
     Route::get('logout', [LoginController::class, 'destroy'])->name('logout');
     Route::get('dashboardpa', [DashboardController::class, 'indexpa'])->name('dashboardpa');
     Route::get('dashboardmhs', [DashboardController::class, 'indexmhs'])->name('dashboardmhs');
-    Route::get('dashboardba', [DashboardController::class, 'indexmhs'])->name('dashboardba');
+    Route::get('dashboardba', [DashboardController::class, 'indexba'])->name('dashboardba');
     Route::get('dashboarddekan', [DashboardController::class, 'indexdekan'])->name('dashboarddekan');
     Route::get('dashboardkaprodi', [DashboardController::class, 'indexkaprodi'])->name('dashboardkaprodi');
 });
