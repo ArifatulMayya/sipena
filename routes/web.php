@@ -115,7 +115,7 @@ Route::get('/kpBuatJadwal',[JadwalKuliahController::class,'buatJadwalkuliah'])->
 //     return view('buatIRSMhs');
 // });
 
-Route::get('/buatIRSMhs', [IRSController::class, 'buatIrs'])->name('irs.buatIrs');
+Route::get('/buatIrs', [IRSController::class, 'buatIrs'])->name('irs.buatIrs');
 
 Route::get('/irsMhs', function () {
     return view('irsMhs');
