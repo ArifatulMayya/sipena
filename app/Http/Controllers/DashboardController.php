@@ -20,7 +20,7 @@ class DashboardController extends Controller
     }
     public function indexba() {
         // Fetch all ruang records from the database
-        $totalRuang = Ruang::all();
+        $totalRuang = Ruang::all()->count();
 
         $approvedRuang = Ruang::where('status', 'Approved')->count();        
 
