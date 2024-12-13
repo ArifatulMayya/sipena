@@ -42,4 +42,6 @@ class DashboardController extends Controller
     public function indexkaprodi() {
         return view('kpDashboard');
     }
+
+  
 }

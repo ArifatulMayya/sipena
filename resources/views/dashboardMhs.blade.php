@@ -15,7 +15,7 @@
             <h1>Stefani Mayya Febria</h1>
         </div>
         <div class="bg-[#2D4995] px-8 rounded-2xl rounded-t-none py-4 font-bold text-white">
-            <h1>NIM : 24060122129800  |  Informatika S1</h1>
+            <h1>NIM : 24060122140179  |  Informatika S1</h1>
         </div>
     </div>
     <div class="flex">

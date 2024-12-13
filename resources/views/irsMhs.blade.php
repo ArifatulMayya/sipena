@@ -23,37 +23,46 @@
                     <div class="bg-white flex justify-between p-4 rounded-lg shadow-md">
                         <div class="text-left text-gray-700">
                             <span class="font-bold text-xl">Semester I</span>
-                            <p class="mt-2">IPS: 3.9 | SKS: 24</p>
+                            <p class="mt-2">SKS: 24</p>
                         </div>
                         <div class="mt-4 text-center">
-                            <button class="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300">👁️</button>
+                            <a href="/isi-irsMhs" class="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300">👁️</a>
                         </div>
                     </div>
                     <div class="bg-white flex justify-between p-4 rounded-lg shadow-md">
                         <div class="text-left text-gray-700">
                             <span class="font-bold text-xl">Semester II</span>
-                            <p class="mt-2">IPS: 3.9 | SKS: 24</p>
+                            <p class="mt-2"> SKS: 24</p>
                         </div>
                         <div class="mt-4 text-center">
-                            <button class="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300">👁️</button>
+                            <a href="/isi-irsMhs" class="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300">👁️</a>
                         </div>
                     </div>
                     <div class="bg-white flex justify-between p-4 rounded-lg shadow-md">
                         <div class="text-left text-gray-700">
                             <span class="font-bold text-xl">Semester III</span>
-                            <p class="mt-2">IPS: 3.9 | SKS: 24</p>
+                            <p class="mt-2">SKS: 24</p>
                         </div>
                         <div class="mt-4 text-center">
-                            <button class="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300">👁️</button>
+                            <a href="/isi-irsMhs" class="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300">👁️</a>
                         </div>
                     </div>
                     <div class="bg-white flex justify-between p-4 rounded-lg shadow-md">
                         <div class="text-left text-gray-700">
                             <span class="font-bold text-xl">Semester IV</span>
-                            <p class="mt-2">IPS: 3.9 | SKS: 24</p>
+                            <p class="mt-2">SKS: 24</p>
                         </div>
                         <div class="mt-4 text-center">
-                            <button class="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300">👁️</button>
+                            <a href="/isi-irsMhs" class="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300">👁️</a>
+                        </div>
+                    </div>
+                    <div class="bg-white flex justify-between p-4 rounded-lg shadow-md">
+                        <div class="text-left text-gray-700">
+                            <span class="font-bold text-xl">Semester V</span>
+                            <p class="mt-2">SKS: 0</p>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <a href="/isi-irsMhs" class="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300">👁️</a>
                         </div>
                     </div>
                 </div>

@@ -4,7 +4,7 @@
             <img src="{{asset('minion.jpg')}}" class="rounded-full mx-auto" width="100" alt="">
         </li>
         <li class="font-bold mt-4">Stefani Mayya Febria</li>
-        <li class="border-b font-normal pb-2">NIM : 24060122129800</li>
+        <li class="border-b font-normal pb-2">NIM : 240601221240179</li>
     </ul>
     <ul class="space-y-2 my-4">
         <li class=" mx-4 py-2 hover:bg-[#2D4995] rounded-lg">

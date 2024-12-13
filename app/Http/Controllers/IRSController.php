@@ -28,12 +28,22 @@ class IRSController extends Controller
             $irs->save();
             return response()->json(['success' => true, 'message' => 'IRS berhasil disetujui']);
         } catch (\Exception $e) {
-            \Log::error('Error saving IRS:', ['error' => $e->getMessage()]);
+            /Log::error('Error saving IRS:', ['error' => $e->getMessage()]);
             return response()->json(['success' => false, 'message' => 'Terjadi kesalahan saat menyimpan data'], 500);
         }
     }
+    public function buatIrs()
+    {
+        // // Get the total number of room submissions
+        // $totaljadwalkuliah = Jadwalkuliah::count();
 
-    
+        // // Get the number of approved room submissions
+        // $approvedjadwalkuliah = Jadwalkuliah::where('status', 'Approved')->count();
+
+        // Pass the data to the view
+        return view('dashboardMhs');
+    }
+
 }
 
 ?>
