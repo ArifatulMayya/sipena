@@ -20,6 +20,7 @@ class UsersSeeder extends Seeder
                 'email' => 'stef.mfh@students.undip.ac.id',
                 'password' => Hash::make('12345678'),
                 'role' => 'mahasiswa',
+
             ],
             [
                 'nama' => 'Peter Parker',
