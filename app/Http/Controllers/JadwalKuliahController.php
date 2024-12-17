@@ -7,6 +7,7 @@ use App\Models\Matakuliah;
 use App\Models\Ruang;
 use Illuminate\Http\Request;
 
+
 class JadwalKuliahController extends Controller
 {
     
@@ -39,6 +40,7 @@ class JadwalKuliahController extends Controller
         // Pass the data to the view
         return view('dekanPersetujuanJadwal', compact('data'));
     }
+    
     
     // public function matkulJadwalkuliah()
     // {
@@ -182,7 +184,7 @@ class JadwalKuliahController extends Controller
         $matkuls = Matakuliah::all();
 
         // Return the view with the Jadwalkuliah data
-        return view('kpBuatJadwal', compact('jadwalkuliahs', 'approvedRuangs', 'matkuls'));
+        return view('buatIRSMhs', compact('jadwalkuliahs', 'matkuls', 'approvedjadwals' ));
     }
 
     public function showApprovedJadwalKuliahirs()
@@ -192,6 +194,26 @@ class JadwalKuliahController extends Controller
 
     // Mengirimkan data ke view 'buatIRSMhs'
     return view('buatIRSMhs', compact('approvedJadwalkuliahirs'));
+    }
+
+    public function store2(Request $request)
+    {
+    // Validasi data input
+    $validated = $request->validate([
+        'jadwal_id' => 'required|exists:jadwalkuliahs,id', // pastikan jadwal_id ada di tabel jadwalkuliahs
+        'user_id' => 'required|exists:users,id', // pastikan user_id valid
+    ]);
+
+    // Simpan data ke tabel pivot (jadwal_user)
+    \DB::table('jadwal_user')->insert([
+        'jadwal_id' => $validated['jadwal_id'],
+        'user_id' => $validated['user_id'],
+        'created_at' => now(),
+        'updated_at' => now(),
+    ]);
+
+    // Kembalikan respons sukses
+    return response()->json(['message' => 'Jadwal berhasil disimpan!'], 200);
     }
     
 }

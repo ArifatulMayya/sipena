@@ -114,8 +114,13 @@ Route::get('/kpBuatJadwal',[JadwalKuliahController::class,'buatJadwalkuliah'])->
 // Route::get('/buatIRSMhs', function () {
 //     return view('buatIRSMhs');
 // });
+//PUSINGIN IRS MAHASISWA DAHLAH
+Route::get('/buatIRSMhs', [JadwalKuliahController::class, 'pilihJadwalKuliah'])->name('pilihJadwalKuliah');
+Route::post('/store-jadwal', [JadwalKuliahController::class, 'store2'])->name('store.jadwal');
+Route::post('/buat-irs-mhs', [IRSController::class, 'buatIRSMhs'])->name('buatIRSMhs');
 
-Route::get('/buatIrs', [IRSController::class, 'buatIrs'])->name('irs.buatIrs');
+
+
 
 Route::get('/irsMhs', function () {
     return view('irsMhs');
