@@ -4,7 +4,7 @@
         <a href="/irsMhs" class="px-2 py-1">
             <i class="fas fa-chevron-left text-white"></i>
         </a>
-       <a class="text-lg font-bold ml-5" href="/dosenBimbingan">Kembali</a>
+       <a class="text-lg font-bold ml-5" href="/irsMhs">Kembali</a>
     </div>
     <div class="flex flex-col items-center mb-8">
         <img src="{{asset('minion.jpg')}}" class="rounded-full mx-auto" width="100" alt="">

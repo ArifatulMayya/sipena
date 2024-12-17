@@ -18,4 +18,8 @@ class Matakuliah extends Model
         'sifat',
         'smt',
     ];
+
+    public function historyIrs(){
+        return $this->hasMany(HistoryIrs::class,'kode_mk','kode_mk');
+    }
 }
