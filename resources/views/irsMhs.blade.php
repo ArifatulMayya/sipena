@@ -26,7 +26,7 @@
                             <p class="mt-2">SKS: 24</p>
                         </div>
                         <div class="mt-4 text-center">
-                            <a href="/isi-irsMhs" class="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300">👁️</a>
+                            <a href="{{ route('irs.detail',['nim'=>'24060122140179','semester'=>1]) }}" class="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300">👁️</a>
                         </div>
                     </div>
                     <div class="bg-white flex justify-between p-4 rounded-lg shadow-md">
@@ -35,7 +35,7 @@
                             <p class="mt-2"> SKS: 24</p>
                         </div>
                         <div class="mt-4 text-center">
-                            <a href="/isi-irsMhs" class="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300">👁️</a>
+                            <a href="{{ route('irs.detail',['nim'=>'24060122140179','semester'=>2]) }}" class="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300">👁️</a>
                         </div>
                     </div>
                     <div class="bg-white flex justify-between p-4 rounded-lg shadow-md">
@@ -44,7 +44,7 @@
                             <p class="mt-2">SKS: 24</p>
                         </div>
                         <div class="mt-4 text-center">
-                            <a href="/isi-irsMhs" class="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300">👁️</a>
+                            <a href="{{ route('irs.detail',['nim'=>'24060122140179','semester'=>3]) }}" class="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300">👁️</a>
                         </div>
                     </div>
                     <div class="bg-white flex justify-between p-4 rounded-lg shadow-md">
@@ -53,7 +53,7 @@
                             <p class="mt-2">SKS: 24</p>
                         </div>
                         <div class="mt-4 text-center">
-                            <a href="/isi-irsMhs" class="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300">👁️</a>
+                            <a href="{{ route('irs.detail',['nim'=>'24060122140179','semester'=>4]) }}" class="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300">👁️</a>
                         </div>
                     </div>
                     <div class="bg-white flex justify-between p-4 rounded-lg shadow-md">
@@ -62,7 +62,7 @@
                             <p class="mt-2">SKS: 0</p>
                         </div>
                         <div class="mt-4 text-center">
-                            <a href="/isi-irsMhs" class="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300">👁️</a>
+                            <a href="{{ route('irs.detail',['nim'=>'24060122140179','semester'=>5]) }}" class="bg-blue-600 text-white py-2 px-4 rounded-full hover:bg-blue-700 transition duration-300">👁️</a>
                         </div>
                     </div>
                 </div>

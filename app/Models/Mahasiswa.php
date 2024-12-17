@@ -24,4 +24,8 @@ class Mahasiswa extends Model
         'status',
         'gender',
     ];
+
+    public function historyIrs(){
+        return $this->hasMany(HistoryIrs::class,'nim','nim');
+    }
 }

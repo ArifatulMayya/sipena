@@ -111,20 +111,17 @@ Route::post('/irs/setuju', [IRSController::class, 'store'])->name('irs.store');
 Route::get('/kpBuatJadwal',[JadwalKuliahController::class,'buatJadwalkuliah'])->name('buatJadwalkuliah');
 // Route::get('/kpBuatJadwal',[JadwalKuliahController::class,'matkulJadwalkuliah'])->name('matkulJadwalkuliah');
 
-// Route::get('/buatIRSMhs', function () {
-//     return view('buatIRSMhs');
-// });
+Route::get('/buatIRSMhs', function () {
+    return view('buatIRSMhs');
+});
 
 Route::get('/buatIrs', [IRSController::class, 'buatIrs'])->name('irs.buatIrs');
 
 Route::get('/irsMhs', function () {
     return view('irsMhs');
 });
-Route::get('/isi-irsMhs',[MahasiswaController::class,'perkembanganstudi'])->name('studi');
 
-Route::get('/isi-irsMhs', function () {
-    return view('isi-irsMhs');
-});
+Route::get('/isi-irsMhs/{nim}/{semester}', [IRSController::class, 'showDetail'])->name('irs.detail');
 
 Route::get('/khsMhs', function () {
     return view('khsMhs');
