@@ -24,6 +24,9 @@ return new class extends Migration
             $table->string('no_telp');
             $table->string('status');
             $table->string('gender');
+            $table->string('nip_doswal')->nullable();
+            $table->string('akses_irs')->default('buka');
+            $table->float('ips')->default(2.0);
             $table->timestamps();
         });
     }

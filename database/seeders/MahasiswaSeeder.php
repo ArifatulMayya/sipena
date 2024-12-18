@@ -25,6 +25,7 @@ class MahasiswaSeeder extends Seeder
                 'no_telp' => '087899351824',
                 'status' => 'Aktif',
                 'gender' => 'Perempuan',
+                'nip_doswal' => '16982412710003',
             ],
             [
                 'nama' => 'Arifatul Mayya Kholida',
@@ -38,6 +39,7 @@ class MahasiswaSeeder extends Seeder
                 'no_telp' => '081278593130',
                 'status' => 'Aktif',
                 'gender' => 'Perempuan',
+                'nip_doswal' => '16982412710003',
             ],
             [
                 'nama' => 'Wahidatuzzahro Febria Fithrurrahmah',
@@ -51,6 +53,7 @@ class MahasiswaSeeder extends Seeder
                 'no_telp' => '081234567890',
                 'status' => 'Aktif',
                 'gender' => 'Perempuan',
+                'nip_doswal' => '16982412710003',
             ],
             [
                 'nama' => 'Elsa Roshana R. Hutagalung',
@@ -64,6 +67,7 @@ class MahasiswaSeeder extends Seeder
                 'no_telp' => '081278565094',
                 'status' => 'Aktif',
                 'gender' => 'Perempuan',
+                'nip_doswal' => '16982412710003',
             ],
             [
                 'nama' => 'Miriam Stefani Abigail Hutapea',
@@ -77,6 +81,7 @@ class MahasiswaSeeder extends Seeder
                 'no_telp' => '081361054431',
                 'status' => 'Aktif',
                 'gender' => 'Perempuan',
+                'nip_doswal' => '16982412710003',
             ],
             [
                 'nama' => 'Ahmad Satria',
@@ -90,6 +95,7 @@ class MahasiswaSeeder extends Seeder
                 'no_telp' => '081234567890',
                 'status' => 'Aktif',
                 'gender' => 'Laki-laki',
+                'nip_doswal' => '16982412710003',
             ],
             [
                 'nama' => 'Budi Santoso',
@@ -103,6 +109,7 @@ class MahasiswaSeeder extends Seeder
                 'no_telp' => '082345678901',
                 'status' => 'Aktif',
                 'gender' => 'Laki-laki',
+                'nip_doswal' => '16982412710003',
             ],
             [
                 'nama' => 'Citra Permatasari',
@@ -116,6 +123,7 @@ class MahasiswaSeeder extends Seeder
                 'no_telp' => '083456789012',
                 'status' => 'Aktif',
                 'gender' => 'Perempuan',
+                'nip_doswal' => '16982412710003',
             ],
             [
                 'nama' => 'Dina Pertiwi',
@@ -170,9 +178,9 @@ class MahasiswaSeeder extends Seeder
                 'gender' => 'Perempuan',
             ],
             [
-                'nama' => 'Hendra Kurniawan',
+                'nama' => 'Hulk',
                 'nim' => '24060122130045',
-                'email' => 'hendra.kurniawan@students.undip.ac.id',
+                'email' => 'hulkijo@students.undip.ac.id',
                 'angkatan' => 2022,
                 'semester' => 5,
                 'jurusan' => 'Informatika',
@@ -181,6 +189,7 @@ class MahasiswaSeeder extends Seeder
                 'no_telp' => '087801234567',
                 'status' => 'Aktif',
                 'gender' => 'Laki-laki',
+                'nip_doswal' => '16982412710003',
             ],
             [
                 'nama' => 'Indah Puspita',
@@ -194,6 +203,7 @@ class MahasiswaSeeder extends Seeder
                 'no_telp' => '082312345678',
                 'status' => 'Aktif',
                 'gender' => 'Perempuan',
+                'nip_doswal' => '16982412710003',
             ],
             [
                 'nama' => 'Joko Santoso',
@@ -207,6 +217,21 @@ class MahasiswaSeeder extends Seeder
                 'no_telp' => '085123456789',
                 'status' => 'Aktif',
                 'gender' => 'Laki-laki',
+                'nip_doswal' => '16982412710003',
+            ],
+            [
+                'nama' => 'Peter Parker',
+                'nim' => '24060122140109',
+                'email' => 'peterparker@students.undip.ac.id',
+                'angkatan' => 2022,
+                'semester' => 5,
+                'jurusan' => 'Informatika',
+                'tanggal_lahir' => '2003-09-03',
+                'alamat' => 'Jl. Pahlawan No. 13, Surabaya',
+                'no_telp' => '085123456789',
+                'status' => 'Aktif',
+                'gender' => 'Laki-laki',
+                'nip_doswal' => '16982412710003',
             ],
         ];
 
@@ -224,6 +249,7 @@ class MahasiswaSeeder extends Seeder
                 'no_telp' => $data['no_telp'],
                 'status' => $data['status'],
                 'gender' => $data['gender'],
+                'nip_doswal' => $data['nip_doswal']??null,
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);

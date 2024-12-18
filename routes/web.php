@@ -111,17 +111,29 @@ Route::post('/irs/setuju', [IRSController::class, 'store'])->name('irs.store');
 Route::get('/kpBuatJadwal',[JadwalKuliahController::class,'buatJadwalkuliah'])->name('buatJadwalkuliah');
 // Route::get('/kpBuatJadwal',[JadwalKuliahController::class,'matkulJadwalkuliah'])->name('matkulJadwalkuliah');
 
-Route::get('/buatIRSMhs', function () {
-    return view('buatIRSMhs');
-});
+
+//BUAT IRS
+Route::get('/buatIRSMhs', [IRSController::class, 'indexBuatIRS'])->name('irs.index');
+
+Route::post('/createirs', [IRSController::class, 'createIRS'])->name('irs.store');
+Route::post('/deleteirs', [IRSController::class, 'deleteIRS'])->name('irs.delete');
 
 Route::get('/buatIrs', [IRSController::class, 'buatIrs'])->name('irs.buatIrs');
 
-Route::get('/irsMhs', function () {
-    return view('irsMhs');
-});
+Route::get('viewirs', [IRSController::class, 'viewIrs'])->name('irs.viewirs');
+
+Route::get('/irsMhs', [IRSController::class, 'index']);
 
 Route::get('/isi-irsMhs/{nim}/{semester}', [IRSController::class, 'showDetail'])->name('irs.detail');
+
+
+//PA IRS
+Route::post('/irs/approve', [IRSController::class, 'approveIRS'])->name('irs.approve');
+Route::post('/irs/approve-all', [IRSController::class, 'approveAll'])->name('irs.approveAll');
+Route::post('/irs/reject', [IRSController::class, 'rejectIRS'])->name('irs.reject');
+
+Route::get('/aksesirs', [IRSController::class,'aksesIRS'])->name('irs.indexPA');
+Route::post('/bukatutupirs', [IRSController::class,'bukatutupIRS']);
 
 Route::get('/khsMhs', function () {
     return view('khsMhs');

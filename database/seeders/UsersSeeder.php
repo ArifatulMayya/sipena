@@ -20,19 +20,21 @@ class UsersSeeder extends Seeder
                 'email' => 'stef.mfh@students.undip.ac.id',
                 'password' => Hash::make('12345678'),
                 'role' => 'mahasiswa',
-
+                'nim_nip' => '24060122140179',
             ],
             [
                 'nama' => 'Peter Parker',
                 'email' => 'peterparker@students.undip.ac.id',
                 'password' => Hash::make('12345678'),
                 'role' => 'mahasiswa',
+                'nim_nip' => '24060122140109',
             ],
             [
                 'nama' => 'Hulk',
                 'email' => 'hulkijo@students.undip.ac.id',
                 'password' => Hash::make('12345678'),
                 'role' => 'mahasiswa',
+                'nim_nip' => '24060122130045',
             ],
             
 
@@ -67,6 +69,7 @@ class UsersSeeder extends Seeder
                 'email' => 'burjobp@live.undip.ac.id',
                 'password' => Hash::make('12345678'),
                 'role' => 'pembimbing akademik',
+                'nim_nip' => '16982412710003',
             ]
         ];
 
@@ -78,6 +81,7 @@ class UsersSeeder extends Seeder
                 'password' => $user['password'],
                 'role' => $user['role'],
                 'email_verified_at' => now(),
+                'nim_nip' => $user['nim_nip'] ?? null,
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);

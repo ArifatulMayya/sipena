@@ -23,6 +23,7 @@ class Mahasiswa extends Model
         'no_telp',
         'status',
         'gender',
+        'akses_irs',
     ];
 
     public function historyIrs(){

@@ -291,73 +291,7 @@
                                     </div>
                                 </div>
 
-                                <!-- Table -->
-                                @php
-                                    // Define the available days and times
-                                    $days = ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat'];
-                                    $times = ['07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00'];
-                                @endphp
-
-                                <div class="w-full lg:w-3/4 pl-0 lg:pl-4">
-                                    <table class="w-full bg-[#d0d9ef] table-auto text-sm text-left rtl:text-right text-gray-500 rounded-md">
-                                        <thead>
-                                            <tr class="text-center">
-                                                <th>#</th>
-                                                @foreach($days as $day)
-                                                    <th class="py-4 w-[20%]">{{ $day }}</th>
-                                                @endforeach
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach($times as $timeIndex => $time)
-                                                <tr class="h-20">
-                                                    <td class="px-4">{{ $time }}</td>
-                                                    @foreach($days as $dayIndex => $day)
-                                                        @php
-                                                            $isEvenCell = ($timeIndex % 2 == 0 && $dayIndex % 2 == 0) || ($timeIndex % 2 != 0 && $dayIndex % 2 != 0);
-                                                            $cellClass = $isEvenCell ? 'bg-white' : ' bg-[#dbe2f5]';
-                                                        @endphp
-                                                        <td class="{{ $cellClass }}">
-                                                            @foreach($data as $matkul)
-                                                                @foreach($matkul->kelas as $kelas)
-                                                                    @if($kelas->hari == $day && substr($kelas->jam, 0, 2) == substr($time, 0, 2))
-                                                                        <div class="mx-[10%] my-4">
-                                                                            <input 
-                                                                                type="radio" 
-                                                                                name="{{ $matkul->matakuliah }}"
-                                                                                id="kelas-{{ $kelas->id }}"
-                                                                                onclick="handleRadioClick(this); submitClass({{ $kelas->id }},this);"
-                                                                                data-hari="{{ $kelas->hari }}"
-                                                                                data-jam="{{ $kelas->jam }}"  
-                                                                                {{ $kelas->isselected ? 'checked' : '' }} 
-                                                                                class="hidden peer" 
-                                                                                required
-                                                                            />
-                                                                            
-                                                                            <label for="kelas-{{ $kelas->id }}" class="inline-flex items-center justify-between min-h-32 w-full p-5 bg-[#faf5fe] border-l-4 border-purple-300 rounded-lg cursor-pointer   peer-checked:bg-green-200 hover:bg-gray-100  peer-checked:hover:bg-green-100 peer-checked:border-l-4 peer-checked:border-green-400 text-gray-900 text-center">
-                                                                                <div class="block">
-                                                                                    <div class="mb-2 text-xs font-bold">
-                                                                                        {{ $matkul->matakuliah }} <br>({{ $kelas->kelas }})
-                                                                                    </div>
-                                                                                    <div class="text-xs mt-1">
-                                                                                        Semester {{ $matkul->semester }} / {{ $matkul->sks }} SKS <br> <span class ="text-blue-600 font-semibold">
-                                                                                        {{ $kelas->jam }} <br>
-                                                                                        {{ $kelas->nama_ruang }}
-                                                                                    </span>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </label>
-                                                                        </div>
-                                                                    @endif
-                                                                @endforeach
-                                                            @endforeach
-                                                        </td>
-                                                    @endforeach
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                                </div>
+                               
                             </div>
 
                       </div>

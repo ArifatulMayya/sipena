@@ -15,7 +15,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('jadwal_kuliah_id')->constrained('jadwalkuliah')->onDelete('cascade');
-            $table->enum('status', ['pilih', 'dihapus'])->default('pilih');
+            $table->string('nim');
+            $table->string('kode_mk');
+            $table->string('semester_ambil');
+            $table->enum('status', ['Pending', 'Disetujui'])->default('Pending');
             $table->timestamps();
         });
         

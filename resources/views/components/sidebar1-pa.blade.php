@@ -24,6 +24,9 @@
              <li class="mx-4 py-2">
                  <a href="/dosenPengajuanIRS" class="block hover:bg-[#2D4995] hover:font-bold rounded-lg px-4 py-2 ">Pengajuan IRS</a>
              </li>
+             <li class="mx-4 py-2">
+                <a href="/aksesirs" class="block hover:bg-[#2D4995] hover:font-bold rounded-lg px-4 py-2 ">Akses IRS</a>
+            </li>
          </ul>
        </aside>
  </nav>

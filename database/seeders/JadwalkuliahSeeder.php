@@ -19,6 +19,16 @@ class JadwalkuliahSeeder extends Seeder
                 'wkt_selesai' => '10:00:00', 'kuota' => '30',
             ],
             [
+                'kode_mk' => 'PAIK6102', 'nama_mk' => 'Dasar Pemrograman', 'kelas' => 'B', 'hari' => 'Senin',
+                'nama_ruang' => 'E102', 'sks' => 3, 'sifat' => 'Wajib', 'wkt_mulai' => '08:00:00', 
+                'wkt_selesai' => '10:00:00', 'kuota' => '30',
+            ],
+            [
+                'kode_mk' => 'PAIK6102', 'nama_mk' => 'Dasar Pemrograman', 'kelas' => 'C', 'hari' => 'Rabu',
+                'nama_ruang' => 'E102', 'sks' => 3, 'sifat' => 'Wajib', 'wkt_mulai' => '08:00:00', 
+                'wkt_selesai' => '10:00:00', 'kuota' => '30',
+            ],
+            [
                 'kode_mk' => 'PAIK6105', 'nama_mk' => 'Struktur Diskrit', 'kelas' => 'B', 'hari' => 'Selasa',
                 'nama_ruang' => 'E102', 'sks' => 4, 'sifat' => 'Wajib', 'wkt_mulai' => '10:00:00', 
                 'wkt_selesai' => '12:00:00', 'kuota' => '30',
@@ -64,6 +74,7 @@ class JadwalkuliahSeeder extends Seeder
                 'wkt_selesai' => '10:00:00', 'kuota' => '30',
             ],
         ];
+
 
         // Insert data into the 'jadwalkuliah' table
         foreach ($jadwalKuliahData as $data) {
