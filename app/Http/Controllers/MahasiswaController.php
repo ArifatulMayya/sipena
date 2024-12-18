@@ -14,7 +14,7 @@ class MahasiswaController extends Controller
     //untuk page dosen bimbingan
     public function index(){
         
-        $mahasiswa=Mahasiswa::where('nip_doswal',$user->nim_nip)->paginate(8);
+        $mahasiswa=Mahasiswa::where('nip_doswal',$user = auth()->user())->paginate(8);
         $sort=null;
         return view('dosenBimbingan',compact('mahasiswa','sort'));
     }
